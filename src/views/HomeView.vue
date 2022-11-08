@@ -24,6 +24,21 @@ e navegar para realizar as ações possíveis do usuário seja ele admin ou user
 
     <Carrousel style="margin:150px 50px 100px 50px"></Carrousel>
     <HighlightBanner style="margin:0px 50px 100px 50px"></HighlightBanner>
+    <div class="secao">
+      Destaques
+    </div>
+    <div class="books" v-for="book in book_details">
+      <Books
+        :name="book.name"
+        :author="book.author"
+        :rating="book.rating"
+        :price="book.price"
+        :categories="book.categories"
+        :promotion = "book.promotion"
+        :id = "book.id"
+      />
+    </div>
+  
     <!-- Chama o component do footer -->
     <Footer />
   </div>
@@ -184,6 +199,44 @@ export default {
       next_text: "Proximo",
       // Usado para o filtro de categoria
       actualCategory: -1,
+      book_details:[
+        {
+          name: "Harry Potter e a pedra filosofal",
+          author: "J. K. Rolling",
+          rating: 5,
+          price: "30.90",
+          categories: ["Aventura", "Juvenil"],
+          promotion: true ,
+          id: 0,
+        },
+        {
+          name: "Eragon",
+          author: "Christopher Paolini",
+          rating: 4,
+          price: "55.90",
+          categories: ["Aventura", "Juvenil"],
+          promotion: true ,
+          id: 1,
+        },
+        {
+          name: "Eragon",
+          author: "Christopher Paolini",
+          rating: 4,
+          price: "55.90",
+          categories: ["Aventura", "Juvenil"],
+          promotion: true ,
+          id: 1,
+        },
+        {
+          name: "Eragon",
+          author: "Christopher Paolini",
+          rating: 4,
+          price: "55.90",
+          categories: ["Aventura", "Juvenil"],
+          promotion: true ,
+          id: 1,
+        }
+      ],
     };
   },
 };
@@ -195,10 +248,14 @@ export default {
 @import "../assets/base.css";
 
 .books {
-  margin-top: 120px;
-  padding: 0 2vw;
-  display: flex;
+  margin-left: 50px;
+  display: inline-block;
   min-height: 50vh;
-  flex-wrap: wrap;
+}
+
+.secao {
+  font-size: xx-large;
+  font-weight: bold;
+  margin-left:50px;
 }
 </style>

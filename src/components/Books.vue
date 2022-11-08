@@ -1,15 +1,17 @@
 <template>
   <div class="home-book">
-    <img class="img-livro" v-bind:src="'/src/assets/' + id + '.jpg'" />
     <div class="home-book-info">
+      <img class="img-livro" v-bind:src="'/src/assets/' + id + '.jpg'" />
       <p class="title">{{ name }}</p>
-      <ul v-for="category in categories" class="category">
-        <li>{{ category }}</li>
-      </ul>
-      <p class="price" v-if="!promo()">R$ {{ price }}</p>
-      <p class="price" v-else>R$ {{ promotion.tempPrice }}</p>
-
-      <div v-if="promo()" class="promo">Promoção!!</div>
+      <p class="author"> {{author}} </p>
+      <div class="rating">
+        <img class="img-rating" v-bind:src="'/src/assets/star.png'" />
+        <img class="img-rating" v-bind:src="'/src/assets/star.png'" />
+        <img class="img-rating" v-bind:src="'/src/assets/star.png'" />
+        <img class="img-rating" v-bind:src="'/src/assets/star.png'" />
+        <img class="img-rating" v-bind:src="'/src/assets/star.png'" />
+      </div>
+      <p class="price">R${{price}}</p>
     </div>
   </div>
 </template>
@@ -17,7 +19,7 @@
 <script>
 export default {
   name: "books",
-  props: ["name", "price", "categories", "promotion", "id"],
+  props: ["name", "author", "rating", "price", "categories", "promotion", "id"],
   data() {
     return {};
   },
@@ -31,7 +33,17 @@ export default {
 
 <style scoped>
 .img-livro {
+  margin: 10px;
+  padding-top: 20px;
   width: 152px;
+}
+
+.img-rating {
+  width: 20px;
+}
+
+.rating {
+  display: inline;
 }
 
 .home-book:hover {
@@ -42,10 +54,10 @@ export default {
 
 .home-book {
   display: flex;
-  width: 21vw;
+  width: 15vw;
   margin: 2vw 0;
   margin-right: 2vw;
-  min-height: 236px;
+  min-height: 250px;
 }
 
 .home-book-info {
@@ -60,10 +72,11 @@ export default {
 
 .title {
   font-size: 1em;
+  font-weight: bold;
 }
 
 .price {
-  font-size: 1em;
+  font-size: 2em;
 }
 
 .promo {
@@ -72,5 +85,9 @@ export default {
   text-align: center;
   border-radius: 5px;
   padding: 2px 0;
+}
+
+.author {
+  font-size: small;
 }
 </style>
