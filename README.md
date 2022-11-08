@@ -2,10 +2,7 @@
 
 ![Screenshot](/src/components/icons/logo.png)
 
-Repositório destinado ao projeto final da disciplina de Introdução ao Desenvolvimento WEB - SCC0219. Este projeto visa o
-desenvolvimento de uma plataforma de venda e leitura de Ebooks, os Ebooks em si são ilimitados, mas o site conta com
-promoções de Ebook e a quantidade de Ebooks em promoção é limitada, definida pelo administrador e pode ser visualizada
-pelo cliente.
+
 
 ## Integrantes:
 
@@ -14,6 +11,8 @@ pelo cliente.
 - 12644964 &nbsp; Juliana Ferreira Alves
 
 - 9778623 &nbsp; Leonardo Moreira Kobe
+
+- 11233668 &nbsp; Pedro Calciolari Jardim
 
 ## Conteúdo:
 
