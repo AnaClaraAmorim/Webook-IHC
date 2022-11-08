@@ -1,8 +1,6 @@
 <template>
   <div class="buyByPrice">
-    <div class="buyByPrice-title">
-      <h1 id="buyByPrice-title-text">Compre por preço</h1>
-    </div>
+   
     <div class="buyByPrice-buttons">
       <button type="button" class="btn btn-primary buy-button btn-lg">Até R$ 10</button>
       <button type="button" class="btn btn-primary buy-button btn-lg">Até R$ 20</button>
@@ -44,13 +42,9 @@ export default {
 
   
 
-  .buyByPrice-title{
-    margin-bottom:80px;
-  }
+ 
 
-  #buyByPrice-title-text{
-    margin-left:100px;
-  }
+  
 
 
   .buyByPrice-buttons{

@@ -1,76 +1,137 @@
 <template>
-  <div class="home-book">
-    <img class="img-livro" v-bind:src="'/src/assets/' + id + '.jpg'" />
-    <div class="home-book-info">
-      <p class="title">{{ name }}</p>
-      <ul v-for="category in categories" class="category">
-        <li>{{ category }}</li>
-      </ul>
-      <p class="price" v-if="!promo()">R$ {{ price }}</p>
-      <p class="price" v-else>R$ {{ promotion.tempPrice }}</p>
+<div class="carrousel">
+  <swiper
+      :slidesPerView="3"
+      :spaceBetween="30"
+      :navigation="true"
+      :loop="true"
+      :modules="modules"
+      class="mySwiper"
+    >
+      <swiper-slide>
+        <div class="card" style="width: 22rem;">
+          <img src="../assets/0.jpg" class="card-img-top" alt="Livro 1">
+          <div class="card-body">
+            <h5 class="card-title nome-livro">Harry Potter</h5>
+            <p class="card-text autor-livro">J.K. ROWLING</p>
+            <p class="card-text preco-livro">R$ 39,90</p>
+          </div>
+        </div>
+      </swiper-slide>
 
-      <div v-if="promo()" class="promo">Promoção!!</div>
-    </div>
+      <swiper-slide>
+        <div class="card" style="width: 22rem;">
+          <img src="../assets/1.jpg" class="card-img-top" alt="Livro 1">
+          <div class="card-body">
+            <h5 class="card-title nome-livro">Eragon</h5>
+            <p class="card-text autor-livro">Christopher Paolini</p>
+            <p class="card-text preco-livro">R$ 36,97</p>
+          </div>
+        </div>
+      </swiper-slide>
+
+      <swiper-slide>
+        <div class="card" style="width: 22rem;">
+          <img src="../assets/2.jpg" class="card-img-top" alt="Livro 1">
+          <div class="card-body">
+            <h5 class="card-title nome-livro">Crepúsculo</h5>
+            <p class="card-text autor-livro">Stephenie Meyer</p>
+            <p class="card-text preco-livro">R$ 52,40</p>
+          </div>
+        </div>
+      </swiper-slide>
+
+      <swiper-slide>
+        <div class="card" style="width: 22rem;">
+          <img src="../assets/3.jpg" class="card-img-top" alt="Livro 1">
+          <div class="card-body">
+            <h5 class="card-title nome-livro">Frankenstein</h5>
+            <p class="card-text autor-livro">Mary Shelley</p>
+            <p class="card-text preco-livro">R$ 39,90</p>
+          </div>
+        </div>
+      </swiper-slide>
+    </swiper>
   </div>
 </template>
 
 <script>
+import { Swiper, SwiperSlide } from "swiper/vue";
+
+// Import Swiper styles
+import "swiper/css";
+
+import "swiper/css/navigation";
+
+
+// import required modules
+import { Navigation } from "swiper";
+
 export default {
-  name: "books",
-  props: ["name", "price", "categories", "promotion", "id"],
-  data() {
-    return {};
+  components: {
+    Swiper,
+    SwiperSlide,
   },
-  methods: {
-    promo() {
-      return this.promotion.is;
-    },
+  setup() {
+    return {
+      modules: [Navigation],
+    };
   },
 };
 </script>
 
-<style scoped>
-.img-livro {
-  width: 152px;
+
+<style>
+
+.carrousel{
+  background-color:rgba(10, 10, 10, 0);
 }
 
-.home-book:hover {
-  border-radius: 0.5em;
-  box-shadow: 2px 2px 2px 2px lightgray;
-  cursor: pointer;
+.swiper {
+  width: 100%;
+  height: 100%;
 }
 
-.home-book {
-  display: flex;
-  width: 21vw;
-  margin: 2vw 0;
-  margin-right: 2vw;
-  min-height: 236px;
-}
-
-.home-book-info {
-  padding-left: 2em;
-  font-family: "Grape Nuts", cursive;
-  font-family: "Open Sans", sans-serif;
-}
-
-.category {
-  color: #0b859f;
-}
-
-.title {
-  font-size: 1em;
-}
-
-.price {
-  font-size: 1em;
-}
-
-.promo {
-  background-color: #1b8c1f;
-  color: white;
+.swiper-slide {
   text-align: center;
-  border-radius: 5px;
-  padding: 2px 0;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+.nome-livro{
+  font-size: 22px;
+
+}
+
+.autor-livro{
+  font-size: 15px;
+
+}
+
+.preco-livro{
+  font-size: 30px;
+
 }
 </style>

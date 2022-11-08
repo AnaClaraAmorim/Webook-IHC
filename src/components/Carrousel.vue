@@ -22,7 +22,7 @@ export default {
   methods: {
     agendar(){
       this.next();
-      window.setTimeout(this.agendar,4000);
+      window.setTimeout(this.agendar,5000);
     },
     next() {
       let controller = document.getElementById("div-controller");

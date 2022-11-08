@@ -1,11 +1,10 @@
 <script setup>
-import Books from "@/components/Books.vue";
 import Footer from "@/components/Footer.vue";
 import Menu from "@/components/Menu.vue";
 import Carrousel from "@/components/Carrousel.vue";
 import HighlightBanner from "@/components/HighlightBanner.vue";
 import BuyByPrice from "@/components/BuyByPrice.vue";
-
+import Books from "@/components/Books.vue";
 </script>
 
 
@@ -24,9 +23,24 @@ e navegar para realizar as ações possíveis do usuário seja ele admin ou user
       :actualCategory="this.$route.query.category"
     />
 
-    <Carrousel style="margin:150px 50px 100px 50px"></Carrousel>
-    <HighlightBanner style="margin:0px 50px 100px 50px"></HighlightBanner>
+    <Carrousel style="margin:150px 50px 30px 50px"></Carrousel>
+    <HighlightBanner style="margin:0px 50px 30px 50px"></HighlightBanner>
+    <div class="section" >
+      <div class="title">
+        Destaques
+      </div>
+      <Books style="margin:0px 50px 10px 50px"></Books>
+    </div>
+    <div class="title buyByPrice-title">
+        Compre por preço
+    </div>
     <BuyByPrice style="margin:0px 50px 100px 50px"></BuyByPrice>
+    <div class="section" >
+      <div class="title">
+        Lançamentos
+      </div>
+      <Books style="margin:0px 50px 10px 50px"></Books>
+    </div>
     <!-- Chama o component do footer -->
     <Footer />
   </div>
@@ -204,4 +218,20 @@ export default {
   min-height: 50vh;
   flex-wrap: wrap;
 }
+
+.title {
+  font-size: xx-large;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-left:50px;
+}
+
+.section{
+  background-color:#E8E8E8;
+  padding: 20px 0;
+}
+
+ .buyByPrice-title{
+    margin-bottom:80px;
+  }
 </style>
