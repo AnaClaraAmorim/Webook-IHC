@@ -24,19 +24,22 @@ e navegar para realizar as ações possíveis do usuário seja ele admin ou user
 
     <Carrousel style="margin:150px 50px 100px 50px"></Carrousel>
     <HighlightBanner style="margin:0px 50px 100px 50px"></HighlightBanner>
-    <div class="secao">
-      Destaques
-    </div>
-    <div class="books" v-for="book in book_details">
-      <Books
-        :name="book.name"
-        :author="book.author"
-        :rating="book.rating"
-        :price="book.price"
-        :categories="book.categories"
-        :promotion = "book.promotion"
-        :id = "book.id"
-      />
+    <div class="section" >
+      <div class="title">
+        Destaques
+      </div>
+      <div class="books" v-for="book in book_details">
+        <Books
+          :name="book.name"
+          :author="book.author"
+          :rating="book.rating"
+          :price="book.price"
+          :categories="book.categories"
+          :promotion = "book.promotion"
+          :id = "book.id"
+        />
+      </div>
+
     </div>
   
     <!-- Chama o component do footer -->
@@ -235,7 +238,25 @@ export default {
           categories: ["Aventura", "Juvenil"],
           promotion: true ,
           id: 1,
-        }
+        },
+        {
+          name: "Harry Potter e a pedra filosofal",
+          author: "J. K. Rolling",
+          rating: 5,
+          price: "30.90",
+          categories: ["Aventura", "Juvenil"],
+          promotion: true ,
+          id: 0,
+        },
+        {
+          name: "Harry Potter e a pedra filosofal",
+          author: "J. K. Rolling",
+          rating: 5,
+          price: "30.90",
+          categories: ["Aventura", "Juvenil"],
+          promotion: true ,
+          id: 0,
+        },
       ],
     };
   },
@@ -253,9 +274,13 @@ export default {
   min-height: 50vh;
 }
 
-.secao {
+.title {
   font-size: xx-large;
   font-weight: bold;
   margin-left:50px;
+}
+
+.section{
+  background-color:#E8E8E8;
 }
 </style>

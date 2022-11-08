@@ -58,6 +58,8 @@ export default {
   margin: 2vw 0;
   margin-right: 2vw;
   min-height: 250px;
+  background-color: white ;
+   border-radius: 0.5em;
 }
 
 .home-book-info {
