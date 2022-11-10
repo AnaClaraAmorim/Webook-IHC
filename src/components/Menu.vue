@@ -169,9 +169,7 @@ export default {
 
 <style scoped>
 img {
-
   height: 100%;
-
 }
 
 .navbar {
@@ -208,7 +206,7 @@ img {
   color: black;
 }
 
-.navbar-brand{
+.navbar-brand {
   height: 400px;
   width: 50%;
 
