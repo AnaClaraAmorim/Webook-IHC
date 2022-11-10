@@ -8,25 +8,27 @@
         ><img
           class="img-navbar navbar-brand"
           src="@/components/icons/icon.png"
-          style="position: absolute;
-width: 150px;
-height: 122.91px;
-left: 149px;
-top: 0px;"
+          style="
+            position: absolute;
+            width: 150px;
+            height: 122.91px;
+            left: 149px;
+            top: 0px;
+          "
       /></a>
-     
+
       <select
         v-if="plotDropDown"
         ref="drop"
         name="livros"
         id="book-select"
-        style="position: absolute;
-width: 389px;
-height: 68px;
-left: 327px;
-top: 24px;
-"
-      
+        style="
+          position: absolute;
+          width: 389px;
+          height: 60px;
+          left: 327px;
+          top: 31.32px;
+        "
         class="form-select form-select-lg mb-3"
         @change="filter(this.$refs.drop.value)"
         v-model="this.dropdownCategory"
@@ -43,19 +45,23 @@ top: 24px;
         </option>
       </select>
       <div>
-        <div class="input-group" style="position: absolute;
-width: 628px;
-height: 65.9px;
-left: 744px;
-top: 31.32px;
+        <div
+          class="input-group"
+          style="
+            position: absolute;
+            width: 628px;
+            height: 65.9px;
+            left: 744px;
+            top: 31.32px;
 
-
-transform: rotate(-0.12deg);">
+            transform: rotate(-0.12deg);
+          "
+        >
           <input
             type="text"
             class="form-control"
             placeholder="Busque um livro"
-            style="height: 60px; width: 400px;"
+            style="height: 60px; width: 400px"
             v-model="textSearch"
             @focusout="active = false"
           />
@@ -78,54 +84,85 @@ transform: rotate(-0.12deg);">
             Dropdown button
           </button>
           <p />
-        
         </div>
       </div>
       <a
         v-if="!hadUser()"
         class="navbar-brand"
         @click="goToLogin()"
-        style="position: absolute;
-              width: 88px;
-              height: 62px;
-              left: 1509px;
-              top: 31px;"
+        style="
+          position: absolute;
+          width: 88px;
+          height: 62px;
+          left: 1509px;
+          top: 31px;
+        "
         ><img
           class="img-navbar navbar-brand"
           src="@/components/icons/Vector.png"
-          style="width: 46px; height: 42px; padding: 5px; vertical-align: middle "
-      /><span class="txt-navbar">Entrar</span></a>
-      
-      <a v-else class="navbar-brand" @click="logout()" style="height: 120px !important"
+          style="
+            width: 46px;
+            height: 42px;
+            padding: 5px;
+            vertical-align: middle;
+          "
+        /><span class="txt-navbar">Entrar</span></a
+      >
+
+      <a
+        v-else
+        class="navbar-brand"
+        @click="logout()"
+        style="height: 120px !important"
         ><img
           class="img-navbar navbar-brand"
           src="@/components/icons/logout.png"
-          style=" height: 60px; padding: 5px"
+          style="height: 60px; padding: 5px"
       /></a>
 
-       <a class="navbar-brand" @click="goToBiblioteca()" style="position: absolute;
-width: 88px;
-height: 62px;
-left: 1597px;
-top: 31px;"
+      <a
+        class="navbar-brand"
+        @click="goToBiblioteca()"
+        style="
+          position: absolute;
+          width: 88px;
+          height: 62px;
+          left: 1597px;
+          top: 31px;
+        "
         ><img
           class="img-navbar navbar-brand"
           src="@/components/icons/Carrinho.png"
-          style="width: 46px; height: 42px; padding: 5px; vertical-align: middle "
-        /><span class="txt-navbar">Carrinho</span></a>
+          style="
+            width: 46px;
+            height: 42px;
+            padding: 5px;
+            vertical-align: middle;
+          "
+        /><span class="txt-navbar">Carrinho</span></a
+      >
 
-      <a class="navbar-brand" @click="goToCarrinho()" style="position: absolute;
-width: 88px;
-height: 62px;
-left: 1687px;
-top: 31px;"
+      <a
+        class="navbar-brand"
+        @click="goToCarrinho()"
+        style="
+          position: absolute;
+          width: 88px;
+          height: 62px;
+          left: 1687px;
+          top: 31px;
+        "
         ><img
           class="img-navbar navbar-brand"
           src="@/components/icons/Book Shelf.png"
-          style="width: 46px; height: 42px; padding: 5px; vertical-align: middle "
+          style="
+            width: 46px;
+            height: 42px;
+            padding: 5px;
+            vertical-align: middle;
+          "
         /><span class="txt-navbar">Biblioteca</span>
       </a>
-      
     </div>
   </nav>
 </template>
@@ -202,9 +239,7 @@ export default {
 
 <style scoped>
 img {
-
   height: 100%;
-
 }
 
 .navbar {
@@ -216,7 +251,6 @@ img {
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
   display: flex;
-  position: absolute;
   height: 122px;
   left: 0px;
   align-items: center;
@@ -244,9 +278,8 @@ img {
   color: black;
 }
 
-.navbar-brand{
+.navbar-brand {
   height: 400px;
-
 }
 
 .navbar-brand:hover {
