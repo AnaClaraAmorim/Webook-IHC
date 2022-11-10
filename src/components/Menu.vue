@@ -1,132 +1,99 @@
 <template>
   <nav
-    class="navbar navbar-expand-lg navbar-light bg-light"
+    class="navbar"
     style="overflow: visible"
   >
-    <div class="container-fluid">
-      <a class="navbar-brand" @click="goToHome()"
-        ><img
-          class="img-navbar navbar-brand"
-          src="@/components/icons/icon.png"
-          style="position: absolute;
-width: 150px;
-height: 122.91px;
-left: 149px;
-top: 0px;"
-      /></a>
-     
-      <select
-        v-if="plotDropDown"
-        ref="drop"
-        name="livros"
-        id="book-select"
-        style="position: absolute;
-width: 389px;
-height: 68px;
-left: 327px;
-top: 24px;
-"
-      
-        class="form-select form-select-lg mb-3"
-        @change="filter(this.$refs.drop.value)"
-        v-model="this.dropdownCategory"
-      >
-        <option value="-1" disabled hidden selected>
-          Selecione a categoria
-        </option>
-        <option value="-2">Todos os livros</option>
-        <option
-          v-for="categorie in getAllCategories()"
-          v-bind:value="categorie.id"
-        >
-          {{ categorie.name }}
-        </option>
-      </select>
-      <div>
-        <div class="input-group" style="position: absolute;
-width: 628px;
-height: 65.9px;
-left: 744px;
-top: 31.32px;
+    <div class="container-fluid" style="display: flex; justify-content: space-around;">
+      <div class="FlexN1">
+          <a class="" @click="goToHome()">
+            <img
+              class="img-navbar"
+              src="@/components/icons/icon.png"  
+            />
+          </a>
+      </div>
 
+      <div class="FlexN2">
+          <select
+            v-if="plotDropDown"
+            ref="drop"
+            name="livros"
+            id="book-select"
+            style="width: 70%;"
 
-transform: rotate(-0.12deg);">
-          <input
-            type="text"
-            class="form-control"
-            placeholder="Busque um livro"
-            style="height: 60px; width: 400px;"
-            v-model="textSearch"
-            @focusout="active = false"
-          />
-          <span
-            class="input-group-text"
-            style="max-height: 60px; max-width: 60px"
-            ><img src="@/components/icons/research.png"
-          /></span>
-        </div>
-        <div class="dropdown">
-          <button
-            class="btn btn-secondary dropdown-toggle"
-            type="button"
-            id="dropdownMenuButton1"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            style="display: none"
-            ref="btnDrop"
+            @change="filter(this.$refs.drop.value)"
+            v-model="this.dropdownCategory"
           >
-            Dropdown button
-          </button>
-          <p />
-        
+            <option value="-1" disabled hidden selected>
+              Selecione a categoria
+            </option>
+            <option value="-2">Todos os livros</option>
+            <option
+              v-for="categorie in getAllCategories()"
+              v-bind:value="categorie.id"
+            >
+              {{ categorie.name }}
+            </option>
+      </select>
+      
+        <div class="BarraPesquisa">
+          <div class="EntradaTexto">
+              <input
+                type="text"
+                class="form-control"
+                style="height: 50px;"
+                placeholder="Busque um livro"
+                v-model="textSearch"
+                @focusout="active = false"
+              />
+          </div>
+              <span
+              class="input-group-text"
+              style="    width: 8%;height: 50px;"
+              ><img src="@/components/icons/research.png"/> 
+             
+              </span>
         </div>
       </div>
-      <a
-        v-if="!hadUser()"
-        class="navbar-brand"
-        @click="goToLogin()"
-        style="position: absolute;
-              width: 88px;
-              height: 62px;
-              left: 1509px;
-              top: 31px;"
-        ><img
-          class="img-navbar navbar-brand"
-          src="@/components/icons/Vector.png"
-          style="width: 46px; height: 42px; padding: 5px; vertical-align: middle "
-      /><span class="txt-navbar">Entrar</span></a>
-      
-      <a v-else class="navbar-brand" @click="logout()" style="height: 120px !important"
-        ><img
-          class="img-navbar navbar-brand"
-          src="@/components/icons/logout.png"
-          style=" height: 60px; padding: 5px"
-      /></a>
 
-       <a class="navbar-brand" @click="goToBiblioteca()" style="position: absolute;
-width: 88px;
-height: 62px;
-left: 1597px;
-top: 31px;"
-        ><img
-          class="img-navbar navbar-brand"
-          src="@/components/icons/Carrinho.png"
-          style="width: 46px; height: 42px; padding: 5px; vertical-align: middle "
-        /><span class="txt-navbar">Carrinho</span></a>
+      <div class="FlexN3">
+          <div class="OptionsHead">
+            <a
+              v-if="!hadUser()"
+              class=""
+              @click="goToLogin()"
+              style="height: 50px; width: 50px;"
+              ><img
+                class="img-navbar"
+                src="@/components/icons/Vector.png"
+            /><span class="txt-navbar">Entrar</span></a>
+            
+            <a v-else class="" @click="logout()" style="height: 120px !important"
+              ><img
+                class="img-navbar"
+                src="@/components/icons/logout.png"
+                style="height: 50px; width: 50px;"
+            /></a>  
 
-      <a class="navbar-brand" @click="goToCarrinho()" style="position: absolute;
-width: 88px;
-height: 62px;
-left: 1687px;
-top: 31px;"
-        ><img
-          class="img-navbar navbar-brand"
-          src="@/components/icons/Book Shelf.png"
-          style="width: 46px; height: 42px; padding: 5px; vertical-align: middle "
-        /><span class="txt-navbar">Biblioteca</span>
-      </a>
-      
+            <a class="" @click="goToBiblioteca()">
+              <img
+                class="img-navbar"
+                src="@/components/icons/Carrinho.png"
+                style="height: 50px; width: 50px;"
+              /><span class="txt-navbar">Carrinho</span></a>
+
+            <a class="" @click="goToCarrinho()" 
+              style="height: 50px; width: 50px;"
+              >
+              <img
+                class="img-navbar"
+                src="@/components/icons/Book Shelf.png"
+                style="height: 50px; width: 50px;"
+              /><span class="txt-navbar">Biblioteca</span>
+            </a>
+        </div>
     </div>
+  </div>
   </nav>
 </template>
 
@@ -209,17 +176,13 @@ img {
 
 .navbar {
   z-index: 500000;
-  justify-content: space-between;
   overflow: hidden;
   background-color: #ffd117 !important;
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
-  display: flex;
-  position: absolute;
   height: 122px;
   left: 0px;
-  align-items: center;
   font-family: "Grape Nuts", cursive;
   font-family: "Open Sans", sans-serif;
 }
@@ -236,6 +199,7 @@ img {
   flex-direction: column;
   font-size: 1vw;
   height: 11vh;
+  justify-content: center;
 }
 
 /* Change background on mouse-over */
@@ -246,9 +210,14 @@ img {
 
 .navbar-brand{
   height: 400px;
+  width: 50%;
 
 }
 
+.EntradaTexto{
+  padding-left: 20px;
+  width: 70%;
+}
 .navbar-brand:hover {
   cursor: pointer;
 }
@@ -291,6 +260,18 @@ img {
   width: 30px;
 }
 
+.FlexN1{
+  width: 20%;
+}
+
+.FlexN2{
+  display:flex;
+  width: 50%;
+}
+
+.FlexN3{
+  width: 13%;
+}
 #input-container > input {
   padding-left: 40px;
 }
@@ -300,7 +281,19 @@ img {
   line-height: normal;
   min-height: 16px;
   text-align: center;
-  width: 88px;
+  width: 100%;
+}
+
+.BarraPesquisa{
+  width: 240%;
+  display: flex;
+}
+
+.OptionsHead{
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  align-items: baseline;
 }
 
 .navigate a {
@@ -324,7 +317,7 @@ img {
   }
 
   .img-navbar {
-    object-fit: cover;
+    /*object-fit: cover;*/
   }
 
   .txt-navbar {
