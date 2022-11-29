@@ -1,7 +1,7 @@
 <template>
   <div class="footer" style="position: relative;bottom: 0;left: 0; width: 100%; ">
     <div style="margin-top: auto;margin-bottom: auto; padding-left:10px ;">
-      <img src="@/components/icons/icon.png" width="90px">
+      <img alt="logo do site, mostrando um livro" src="@/components/icons/icon.png" width="90px">
     </div>
     <div class="txt-footer">
       <h2 class="txt-link" >Sobre nós</h2>

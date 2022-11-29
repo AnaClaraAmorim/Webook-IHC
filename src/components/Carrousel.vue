@@ -1,15 +1,15 @@
 <template>
   <div class="carrosel">
     <div id="div-controller" class="0">
-      <img src="../components/banner/banner1.png" class="img-show active" />
-      <img src="../components/banner/banner2.jpg" class="img-show" />
-      <img src="../components/banner/banner3.webp" class="img-show" />
+      <img alt="banner com promoções" src="../components/banner/banner1.png" class="img-show active" />
+      <img alt="banner com promoções" src="../components/banner/banner2.jpg" class="img-show" />
+      <img alt="banner com promoções" src="../components/banner/banner3.webp" class="img-show" />
     </div>
     <button @click="next()" class="btn-carrosel direito">
-      <img class="icon" src="../components/icons/right-chevron.png" /> Proximo
+      <img alt="seta indicando rolar o carrosel para direita" class="icon" src="../components/icons/right-chevron.png" /> Proximo
     </button>
     <button @click="prev()" class="btn-carrosel esquerdo">
-      Anterior <img class="icon" src="../components/icons/chevron-pointing-to-the-left.png"  />
+      Anterior <img alt="seta indicando rolar o carrossel para esquerda" class="icon" src="../components/icons/chevron-pointing-to-the-left.png"  />
     </button>
   </div>
 </template>

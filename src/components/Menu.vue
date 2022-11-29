@@ -7,6 +7,7 @@
       <div class="FlexN1">
           <a class="" @click="goToHome()">
             <img
+              alt="logo do site, mostrando um livro"
               class="img-navbar"
               src="@/components/icons/icon.png"  
             />
@@ -50,7 +51,7 @@
               <span
               class="input-group-text"
               style="    width: 8%;height: 50px;"
-              ><img src="@/components/icons/research.png"/> 
+              ><img alt="lupa" src="@/components/icons/research.png"/> 
              
               </span>
         </div>
@@ -64,12 +65,14 @@
               @click="goToLogin()"
               style="height: 50px; width: 50px;"
               ><img
+                alt="icone com uma pessoa"
                 class="img-navbar"
                 src="@/components/icons/Vector.png"
             /><span class="txt-navbar">Entrar</span></a>
             
             <a v-else class="" @click="logout()" style="height: 120px !important"
               ><img
+                alt="icone indicando saída"
                 class="img-navbar"
                 src="@/components/icons/logout.png"
                 style="height: 50px; width: 50px;"
@@ -77,6 +80,7 @@
 
             <a class="" @click="goToBiblioteca()">
               <img
+                alt="carrinho"
                 class="img-navbar"
                 src="@/components/icons/Carrinho.png"
                 style="height: 50px; width: 50px;"
@@ -86,6 +90,7 @@
               style="height: 50px; width: 50px;"
               >
               <img
+                alt="icone com alguns livros"
                 class="img-navbar"
                 src="@/components/icons/Book Shelf.png"
                 style="height: 50px; width: 50px;"
@@ -312,10 +317,6 @@ img {
 @media screen and (max-width: 1200px) {
   .research {
     width: 200px;
-  }
-
-  .img-navbar {
-    /*object-fit: cover;*/
   }
 
   .txt-navbar {

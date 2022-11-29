@@ -1,23 +1,23 @@
 <template>
     <div class="banner">
         <div class="banner-img-txt">
-            <img  src="../components/icons/party.png"  class="circle-icon">
+            <img alt="icone indicando comemoração" src="../components/icons/party.png"  class="circle-icon">
             <p>Lançamentos</p>
         </div>
         <div class="banner-img-txt">
-            <img  src="../components/icons/livro.png"  class="circle-icon">
+            <img  alt="icone com alguns livros" src="../components/icons/livro.png"  class="circle-icon">
             <p>Minha Biblioteca</p>
         </div>
         <div class="banner-img-txt">
-            <img  src="../components/icons/promotions.png"  class="circle-icon">
+            <img  alt="símbolo de porcentagem indicando descontos" src="../components/icons/promotions.png"  class="circle-icon">
             <p>Promoções</p>
         </div>
         <div class="banner-img-txt">
-            <img  src="../components/icons/gift.png"  class="circle-icon">
+            <img  alt="presente" src="../components/icons/gift.png"  class="circle-icon">
             <p>Dicas de presente</p>
         </div>
          <div class="banner-img-txt">
-            <img  src="../components/icons/price-tag.png"  class="circle-icon">
+            <img  alt="etiqueta" src="../components/icons/price-tag.png"  class="circle-icon">
             <p>Mais vendidos</p>
         </div>
       
