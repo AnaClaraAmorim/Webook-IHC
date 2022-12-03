@@ -5,7 +5,7 @@
   >
     <div class="container-fluid" style="display: flex; justify-content: space-around;">
       <div class="FlexN1">
-          <a class="" @click="goToHome()">
+          <a class="" @click="goToHome()" style="cursor:pointer">
             <img
               alt="logo do site, mostrando um livro"
               class="img-navbar"
@@ -48,12 +48,14 @@
                 @focusout="active = false"
               />
           </div>
+          <div>
               <span
               class="input-group-text"
-              style="    width: 8%;height: 50px;"
-              ><img alt="lupa" src="@/components/icons/research.png"/> 
+              style=" height: 50px;"
+              ><a style="cursor:pointer"><img alt="lupa" src="@/components/icons/research.png" style="width:30px; height:30px"/></a>
              
               </span>
+            </div> 
         </div>
       </div>
 
@@ -63,7 +65,7 @@
               v-if="!hadUser()"
               class=""
               @click="goToLogin()"
-              style="height: 50px; width: 50px;"
+              style="height: 50px; width: 50px; cursor:pointer"
               ><img
                 alt="icone com uma pessoa"
                 class="img-navbar"
@@ -75,10 +77,10 @@
                 alt="icone indicando saída"
                 class="img-navbar"
                 src="@/components/icons/logout.png"
-                style="height: 50px; width: 50px;"
+                style="height: 50px; width: 50px; cursor: pointer;"
             /></a>  
 
-            <a class="" @click="goToBiblioteca()">
+            <a class="" @click="goToBiblioteca()" style="cursor:pointer">
               <img
                 alt="carrinho"
                 class="img-navbar"
@@ -87,7 +89,7 @@
               /><span class="txt-navbar">Carrinho</span></a>
 
             <a class="" @click="goToCarrinho()" 
-              style="height: 50px; width: 50px;"
+              style="height: 50px; width: 50px; cursor:pointer"
               >
               <img
                 alt="icone com alguns livros"
@@ -96,8 +98,11 @@
                 style="height: 50px; width: 50px;"
               /><span class="txt-navbar">Biblioteca</span>
             </a>
+          </div>
+          </div>
+          <div>
+            <button @click="AumentaFonte()">Fonte</button>
         </div>
-    </div>
   </div>
   </nav>
 </template>
@@ -168,6 +173,20 @@ export default {
     getAllCategories() {
       return JSON.parse(localStorage.getItem("categories"));
     },
+    PercorreDOM(element){
+            var currentSize = window.getComputedStyle(element, null).getPropertyValue('font-size');
+            console.log(currentSize)
+            if (currentSize) {    
+                currentSize = parseFloat(currentSize.replace("px",""));
+                element.style.fontSize = (currentSize * 1.05) + "px";
+                for(var i=0; i < element.children.length; i++){
+                    this.PercorreDOM(element.children[i]);
+                }
+            }
+    },
+    AumentaFonte()  {
+          this.PercorreDOM(document.body)
+    }
   },
 };
 </script>
