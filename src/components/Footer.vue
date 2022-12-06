@@ -41,7 +41,6 @@ export default {
   justify-content: space-evenly;
   background-color: #FFD117;
   padding: 2em 0;
-  color: black;
 }
 
 .txt-footer {
@@ -50,7 +49,7 @@ export default {
   width: 30vw;
   justify-content: center;
   text-align: center;
-  
+  color:black;
 }
 
 .txt-link{

@@ -227,7 +227,7 @@ export default {
 }
 
 .section{
-  background-color:#E8E8E8;
+  background-color:rgb(232, 232, 232);
   padding: 20px 0;
 }
 

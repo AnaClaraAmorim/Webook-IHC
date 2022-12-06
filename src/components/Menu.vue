@@ -51,8 +51,8 @@
           <div>
               <span
               class="input-group-text"
-              style=" height: 50px;"
-              ><a style="cursor:pointer"><img alt="lupa" src="@/components/icons/research.png" style="width:30px; height:30px"/></a>
+              style=" height: 50px; background-color:rgb(233, 237, 239) "
+              ><a style="cursor:pointer; height:40px" ><img alt="lupa" src="@/components/icons/research.png" style="width:30px; height:30px"/></a>
              
               </span>
             </div> 
@@ -65,11 +65,12 @@
               v-if="!hadUser()"
               class=""
               @click="goToLogin()"
-              style="height: 50px; width: 50px; cursor:pointer"
+              style="height: 62px; width: 40%; cursor:pointer"
               ><img
                 alt="icone com uma pessoa"
                 class="img-navbar"
                 src="@/components/icons/Vector.png"
+                style="height:45px"
             /><span class="txt-navbar">Entrar</span></a>
             
             <a v-else class="" @click="logout()" style="height: 120px !important"
@@ -77,33 +78,39 @@
                 alt="icone indicando saída"
                 class="img-navbar"
                 src="@/components/icons/logout.png"
-                style="height: 50px; width: 50px; cursor: pointer;"
+                style="height: 50px; width: 40%; cursor: pointer;"
             /></a>  
 
-            <a class="" @click="goToBiblioteca()" style="cursor:pointer">
+            <a class="" @click="goToBiblioteca()" style="cursor:pointer; margin:8px">
               <img
                 alt="carrinho"
                 class="img-navbar"
                 src="@/components/icons/Carrinho.png"
-                style="height: 50px; width: 50px;"
+                style="height: 50px; width: 50%; "
               /><span class="txt-navbar">Carrinho</span></a>
 
             <a class="" @click="goToCarrinho()" 
-              style="height: 50px; width: 50px; cursor:pointer"
+              style="height: 65px; width: 40%; cursor:pointer"
               >
               <img
                 alt="icone com alguns livros"
                 class="img-navbar"
                 src="@/components/icons/Book Shelf.png"
-                style="height: 50px; width: 50px;"
+                style="height: 70px; width: 40%;"
               /><span class="txt-navbar">Biblioteca</span>
             </a>
           </div>
+          <div>
+            <img src="../components/icons/icons8-increase-font-32.png" @click="AumentaFonte()" style="cursor:pointer">
           </div>
           <div>
-            <button @click="AumentaFonte()">Fonte</button>
+            <img src="../components/icons/icons8-decrease-font-32.png" @click="DiminuiFonte()" style="cursor:pointer">
+          </div>
+          <div>
+            <img src="../components/icons/icons8-contrast-32.png" @click="Contraste()" style="cursor:pointer">
+          </div>
         </div>
-  </div>
+      </div>
   </nav>
 </template>
 
@@ -173,20 +180,89 @@ export default {
     getAllCategories() {
       return JSON.parse(localStorage.getItem("categories"));
     },
-    PercorreDOM(element){
+    PercorreDOMup(element){
             var currentSize = window.getComputedStyle(element, null).getPropertyValue('font-size');
-            console.log(currentSize)
             if (currentSize) {    
                 currentSize = parseFloat(currentSize.replace("px",""));
                 element.style.fontSize = (currentSize * 1.05) + "px";
                 for(var i=0; i < element.children.length; i++){
-                    this.PercorreDOM(element.children[i]);
+                    this.PercorreDOMup(element.children[i]);
                 }
             }
     },
     AumentaFonte()  {
-          this.PercorreDOM(document.body)
-    }
+          this.PercorreDOMup(document.body)
+    },
+    PercorreDOMdown(element){
+            var currentSize = window.getComputedStyle(element, null).getPropertyValue('font-size');
+            if (currentSize) {    
+                currentSize = parseFloat(currentSize.replace("px",""));
+                element.style.fontSize = (currentSize * 0.95) + "px";
+                for(var i=0; i < element.children.length; i++){
+                    this.PercorreDOMdown(element.children[i]);
+                }
+            }
+    },
+    DiminuiFonte()  {
+          this.PercorreDOMdown(document.body)
+    },
+    PercorreDOMcont(element){
+            var currentBackColor = window.getComputedStyle(element, null).getPropertyValue('background-color');
+            
+            var currentFontColor = window.getComputedStyle(element, null).getPropertyValue('color');
+            if (currentBackColor == "rgb(255, 255, 255)") {    
+                element.style.background = "rgb(0, 0, 1)";  
+            }
+            if(currentBackColor == "rgb(0, 0, 1)")
+            {
+              element.style.background = "rgb(255, 255, 255)"
+            }
+
+
+            if (currentBackColor=="rgb(233, 236, 239)") {    
+                element.style.background = "rgb(0,0,2)";  
+            }
+            if(currentBackColor == "rgb(0, 0, 2)")
+            {
+              element.style.background = "rgb(233, 236, 239)"
+            }
+
+
+            if(currentBackColor == "rgb(232, 232, 232)")
+            {
+              element.style.backgroundColor = "rgb(70, 82, 73)"
+            }
+
+            if(currentBackColor == "rgb(70, 82, 73)")
+            {
+              element.style.backgroundColor = "rgb(232, 232, 232)"
+            }
+
+            //console.log(currentBackColor)
+            if(currentFontColor == "rgb(0, 0, 0)"){
+              element.style.color = "rgb(256, 256, 255)";
+            }
+            if(currentFontColor == "rgb(256, 256, 255)"){
+              element.style.color = "rgb(0, 0, 0)";
+            }
+
+            if(currentFontColor=="rgb(33, 37, 41)"){
+              element.style.color = "rgb(256, 256, 254)";
+            }
+            if(currentFontColor=="rgb(255, 255, 254)"){
+              element.style.color = "rgb(33, 37, 41)";
+            }
+
+            if(currentBackColor != "rgb(255, 209, 23)")
+            {
+              for(var i=0; i < element.children.length; i++){
+                    this.PercorreDOMcont(element.children[i]);
+                }
+            }
+    },
+    Contraste()  {
+          this.PercorreDOMcont(document.body)
+    },
   },
 };
 </script>
@@ -283,16 +359,17 @@ img {
 }
 
 .FlexN1{
-  width: 20%;
+  width: 5%;
 }
 
 .FlexN2{
   display:flex;
-  width: 50%;
+  width: 40%;
 }
 
 .FlexN3{
-  width: 13%;
+  display: flex;
+  align-items: center;
 }
 #input-container > input {
   padding-left: 40px;
@@ -342,4 +419,6 @@ img {
     font-size: large;
   }
 }
+
+
 </style>

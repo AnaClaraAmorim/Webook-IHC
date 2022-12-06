@@ -53,6 +53,7 @@
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
   font-size: 20px;
+  color:black;
 }
 
 .banner-img-txt:hover{
