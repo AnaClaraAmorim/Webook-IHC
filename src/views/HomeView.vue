@@ -24,7 +24,7 @@ e navegar para realizar as ações possíveis do usuário seja ele admin ou user
     <Menu
       :plotDropDown="true"
       :filter="filterDropdown"
-      :actualCategory="this.$route.query.category"
+      :actualCategory="$route.query.category"
     />
   </div>
 

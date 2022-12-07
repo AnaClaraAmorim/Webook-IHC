@@ -104,7 +104,7 @@
               <img
                 alt="icone com alguns livros"
                 class="img-navbar"
-                src="@/components/icons/Book Shelf.png"
+                src="@/components/icons/Book_Shelf.png"
                 style="height: 70px; width: 40%;"
               /><span class="txt-navbar">Biblioteca</span>
             </a>

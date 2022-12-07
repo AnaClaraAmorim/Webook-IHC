@@ -1,14 +1,22 @@
 <script setup>
 import Footer from "@/components/Footer.vue";
 import Menu from "@/components/Menu.vue";
+import MenuMobile from "@/components/MenuMobile.vue";
 </script>
 
 <template>
-  <Menu
-    :plotDropDown="true"
-    :filter="filterDropdown"
-    :actualCategory="this.$route.query.category"
-  />
+  <div v-if="!isMobile()" class="marginMenu">
+    <Menu
+      :plotDropDown="true"
+      :filter="filterDropdown"
+      :actualCategory="$route.query.category"
+    />
+  </div>
+
+  <div v-else>
+    <MenuMobile
+    :plotDropDown="true"></MenuMobile>
+  </div>
   <div class="finish">
     <div class="dados">
       <h1 style="text-align: center; padding-top: 10px">
@@ -143,6 +151,13 @@ export default {
     goToSucess() {
       this.$router.push("/sucess");
     },
+    isMobile() {
+      if(window.screen.availWidth < 700){
+        return true
+        } else {
+        return false
+        }
+        }
   }
 };
 </script>

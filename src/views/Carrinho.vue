@@ -1,16 +1,24 @@
 <script setup>
 import Footer from "@/components/Footer.vue";
 import Menu from "@/components/Menu.vue";
+import MenuMobile from "@/components/MenuMobile.vue";
 
 </script>
 
 <template>
 
+    <div v-if="!isMobile()" class="marginMenu">
     <Menu
       :plotDropDown="true"
       :filter="filterDropdown"
-      :actualCategory="this.$route.query.category"
+      :actualCategory="$route.query.category"
     />
+  </div>
+
+  <div v-else>
+    <MenuMobile
+    :plotDropDown="true"></MenuMobile>
+  </div>
 
     
     <div class="body-container">
@@ -50,6 +58,21 @@ import Menu from "@/components/Menu.vue";
     <Footer />
    
 </template>
+
+<script>
+export default{
+    methods:{
+        isMobile() {
+      if(window.screen.availWidth < 700){
+        return true
+        } else {
+        return false
+        }
+        }
+    }
+}
+
+</script>
 
 <style scoped>
 
