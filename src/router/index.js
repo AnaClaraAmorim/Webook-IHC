@@ -4,8 +4,7 @@ import Login from '../views/Login.vue'
 import Book from '../views/Book.vue'
 import Finish from '../views/Finish.vue'
 import Sucess from '../views/Sucess.vue'
-
-
+import Carrinho from '../views/Carrinho.vue'
 
 /**
  * Responsável por criar as rotas do site, cada rota tem um arquivo na pasta view que
@@ -43,7 +42,11 @@ const router = createRouter({
             path:'/sucess',
             name: 'sucess',
             component: Sucess
-        },
+        },{
+            path:'/carrinho',
+            name: 'carrinho',
+            component: Carrinho
+        }
     ]
 })
 
