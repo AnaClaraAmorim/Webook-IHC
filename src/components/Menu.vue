@@ -81,7 +81,7 @@
                 style="height: 50px; width: 40%; cursor: pointer;"
             /></a>  
 
-            <a class="" @click="goToBiblioteca()" style="cursor:pointer; margin:8px">
+            <a class="" @click="goToCarrinho()" style="cursor:pointer; margin:8px">
               <img
                 alt="carrinho"
                 class="img-navbar"
@@ -89,7 +89,7 @@
                 style="height: 50px; width: 50%; "
               /><span class="txt-navbar">Carrinho</span></a>
 
-            <a class="" @click="goToCarrinho()" 
+            <a class="" @click="goToBiblioteca()" 
               style="height: 65px; width: 40%; cursor:pointer"
               >
               <img

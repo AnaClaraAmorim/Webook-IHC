@@ -2,6 +2,10 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Login from '../views/Login.vue'
 import Book from '../views/Book.vue'
+import Finish from '../views/Finish.vue'
+import Sucess from '../views/Sucess.vue'
+
+
 
 /**
  * Responsável por criar as rotas do site, cada rota tem um arquivo na pasta view que
@@ -29,7 +33,17 @@ const router = createRouter({
             path:'/book',
             name: 'book',
             component: Book
-        }
+        },
+        {
+            path:'/finalizar',
+            name: 'finalizar',
+            component: Finish
+        },
+        {
+            path:'/sucess',
+            name: 'sucess',
+            component: Sucess
+        },
     ]
 })
 
