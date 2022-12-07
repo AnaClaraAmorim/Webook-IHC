@@ -53,7 +53,9 @@ import MenuMobile from "@/components/MenuMobile.vue";
                         </div>
 
                         <div class="Botao">
-                            <button class="BotaoCarrinho" style="font-size:15px" tabindex="15">Adicionar ao carrinho</button>
+                            <button type="button" class="btn btn-warning BotaoCarrinho " @click="goToSucess()" tabindex="15"> 
+                            Adicionar ao carrinho
+                                </button>
                         </div>
 
                     </div>
@@ -143,7 +145,7 @@ import MenuMobile from "@/components/MenuMobile.vue";
                 </div>
             </div>
 
-            <div class="avaliacoes" style="margin-left:60px">
+            <div class="avaliacoes">
                 <div>
                     <span style="font-size:30px">Avaliações</span>
                 </div>
@@ -237,6 +239,8 @@ export default{
     background-color: #ffd117;
     color: rgb(0,0,3);
     font-weight:bold;
+     font-family: "Open Sans", sans-serif;
+  font-weight: bold;
 }
 
 .imgAvaliacao{
@@ -272,5 +276,25 @@ export default{
     background-color: rgb(195, 191, 191);
     color:black; 
     font-weight: bold;
+}
+
+.avaliacoes{
+        margin-left: 60;
+    }
+
+@media (max-width: 768px) {
+    .DetalhesLivro{
+        flex-direction: column;
+    }
+    .avaliacoes{
+        margin-left: 0;
+    }
+    .detalhes{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .container{
+        margin-top: 40px    ;
+    }
 }
 </style>
