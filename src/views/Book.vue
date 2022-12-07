@@ -1,16 +1,24 @@
 <script setup>
 import Footer from "@/components/Footer.vue";
 import Menu from "@/components/Menu.vue";
+import MenuMobile from "@/components/MenuMobile.vue";
 
 </script>
 
 <template>
 
+<div v-if="!isMobile()" class="marginMenu">
     <Menu
       :plotDropDown="true"
       :filter="filterDropdown"
       :actualCategory="this.$route.query.category"
     />
+  </div>
+
+  <div v-else>
+    <MenuMobile
+    :plotDropDown="true"></MenuMobile>
+  </div>
 
     <div class="container">
 
@@ -32,11 +40,11 @@ import Menu from "@/components/Menu.vue";
                         </div>
 
                         <div class="Nota">
-                            <img src="../components/icons/icons-estrela-cheia.png" class="imgAvaliacao">
-                            <img src="../components/icons/icons-estrela-cheia.png" class="imgAvaliacao">
-                            <img src="../components/icons/icons-estrela-cheia.png" class="imgAvaliacao">
-                            <img src="../components/icons/icons-estrela-cheia.png" class="imgAvaliacao">
-                            <img src="../components/icons/icons-estrela-vazia.png" class="imgAvaliacao">
+                            <img src="../components/icons/icons-estrela-cheia.png" class="imgAvaliacao" alt="estrela preenchida">
+                            <img src="../components/icons/icons-estrela-cheia.png" class="imgAvaliacao" alt="estrela preenchida">
+                            <img src="../components/icons/icons-estrela-cheia.png" class="imgAvaliacao" alt="estrela preenchida">
+                            <img src="../components/icons/icons-estrela-cheia.png" class="imgAvaliacao" alt="estrela preenchida">
+                            <img src="../components/icons/icons-estrela-vazia.png" class="imgAvaliacao" alt="estrela vazia">
                         </div>
                     </div>
                     <div class="Preco" style="display:flex; flex-direction: column; align-items: center;">
@@ -45,14 +53,14 @@ import Menu from "@/components/Menu.vue";
                         </div>
 
                         <div class="Botao">
-                            <button class="BotaoCarrinho" style="font-size:15px">Adicionar ao carrinho</button>
+                            <button class="BotaoCarrinho" style="font-size:15px" tabindex="15">Adicionar ao carrinho</button>
                         </div>
 
                     </div>
                 </div>
 
                 <div class="Descricao" style="margin-top:30px">
-                    <span>Harry Potter é um garoto cujos pais, feiticeiros, foram assassinados por um poderosíssimo bruxo quando ele ainda era um bebê. Ele foi levado, então, para a casa dos tios que nada tinham a ver com o sobrenatural. Pelo contrário. Até os 10 anos, Harry foi uma espécie de gata borralheira: maltratado pelos tios, herdava roupas velhas do primo gorducho, tinha óculos remendados e era tratado como um estorvo. No dia de seu aniversário de 11 anos, entretanto, ele parece deslizar por um buraco sem fundo, como o de Alice no país das maravilhas, que o conduz a um mundo mágico. Descobre sua verdadeira história e seu destino: ser um aprendiz de feiticeiro até o dia em que terá que enfrentar a pior força do mal, o homem que assassinou seus pais. O menino de olhos verde, magricela e desengonçado, tão habituado à rejeição, descobre, também, que é um herói no universo dos magos. Potter fica sabendo que é a única pessoa a ter sobrevivido a um ataque do tal bruxo do mal e essa é a causa da marca em forma de raio que ele carrega na testa. Ele não é um garoto qualquer, ele sequer é um feiticeiro qualquer; ele é Harry Potter, símbolo de poder, resistência e um líder natural entre os sobrenaturais. A fábula, recheada de fantasmas, paredes que falam, caldeirões, sapos, unicórnios, dragões e gigantes, não é, entretanto, apenas um passatempo.</span>
+                    <span style="color:black">Harry Potter é um garoto cujos pais, feiticeiros, foram assassinados por um poderosíssimo bruxo quando ele ainda era um bebê. Ele foi levado, então, para a casa dos tios que nada tinham a ver com o sobrenatural. Pelo contrário. Até os 10 anos, Harry foi uma espécie de gata borralheira: maltratado pelos tios, herdava roupas velhas do primo gorducho, tinha óculos remendados e era tratado como um estorvo. No dia de seu aniversário de 11 anos, entretanto, ele parece deslizar por um buraco sem fundo, como o de Alice no país das maravilhas, que o conduz a um mundo mágico. Descobre sua verdadeira história e seu destino: ser um aprendiz de feiticeiro até o dia em que terá que enfrentar a pior força do mal, o homem que assassinou seus pais. O menino de olhos verde, magricela e desengonçado, tão habituado à rejeição, descobre, também, que é um herói no universo dos magos. Potter fica sabendo que é a única pessoa a ter sobrevivido a um ataque do tal bruxo do mal e essa é a causa da marca em forma de raio que ele carrega na testa. Ele não é um garoto qualquer, ele sequer é um feiticeiro qualquer; ele é Harry Potter, símbolo de poder, resistência e um líder natural entre os sobrenaturais. A fábula, recheada de fantasmas, paredes que falam, caldeirões, sapos, unicórnios, dragões e gigantes, não é, entretanto, apenas um passatempo.</span>
                 </div>
             </div>
 
@@ -142,11 +150,11 @@ import Menu from "@/components/Menu.vue";
                 <div  class="comentarios">
                     
                     <div class="Nota">
-                        <img src="../components/icons/icons-estrela-cheia.png" class="imgAvaliacao">
-                        <img src="../components/icons/icons-estrela-cheia.png" class="imgAvaliacao">
-                        <img src="../components/icons/icons-estrela-cheia.png" class="imgAvaliacao">
-                        <img src="../components/icons/icons-estrela-vazia.png" class="imgAvaliacao">
-                        <img src="../components/icons/icons-estrela-vazia.png" class="imgAvaliacao">
+                        <img src="../components/icons/icons-estrela-cheia.png" class="imgAvaliacao" alt="estrela preenchida">
+                        <img src="../components/icons/icons-estrela-cheia.png" class="imgAvaliacao" alt="estrela preenchida">
+                        <img src="../components/icons/icons-estrela-cheia.png" class="imgAvaliacao" alt="estrela preenchida">
+                        <img src="../components/icons/icons-estrela-vazia.png" class="imgAvaliacao" alt="estrela vazia">
+                        <img src="../components/icons/icons-estrela-vazia.png" class="imgAvaliacao" alt="estrela vazia">
                     </div>
                     
                     <div>
@@ -154,11 +162,11 @@ import Menu from "@/components/Menu.vue";
                     </div>
 
                     <div class="Nota">
-                        <img src="../components/icons/icons-estrela-cheia.png" class="imgAvaliacao">
-                        <img src="../components/icons/icons-estrela-cheia.png" class="imgAvaliacao">
-                        <img src="../components/icons/icons-estrela-cheia.png" class="imgAvaliacao">
-                        <img src="../components/icons/icons-estrela-cheia.png" class="imgAvaliacao">
-                        <img src="../components/icons/icons-estrela-cheia.png" class="imgAvaliacao">
+                        <img src="../components/icons/icons-estrela-cheia.png" class="imgAvaliacao" alt="estrela preenchida">
+                        <img src="../components/icons/icons-estrela-cheia.png" class="imgAvaliacao" alt="estrela preenchida">
+                        <img src="../components/icons/icons-estrela-cheia.png" class="imgAvaliacao" alt="estrela preenchida">
+                        <img src="../components/icons/icons-estrela-cheia.png" class="imgAvaliacao" alt="estrela preenchida">
+                        <img src="../components/icons/icons-estrela-cheia.png" class="imgAvaliacao" alt="estrela preenchida">
                     </div>
                     
                     <div>
@@ -177,6 +185,18 @@ import Menu from "@/components/Menu.vue";
    
 </template>
 
+<script>
+export default{
+    methods:{isMobile() {
+      if(window.screen.availWidth < 700){
+        return true
+        } else {
+        return false
+        }
+        }
+    }
+}
+</script>
 <style scoped>
 .container{
     display: flex;
@@ -191,6 +211,7 @@ import Menu from "@/components/Menu.vue";
     border-radius: 10px;
     padding: 40px;
     width: 100%;
+    flex-wrap: wrap;
 }
 
 .NomePreco{

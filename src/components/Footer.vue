@@ -4,22 +4,22 @@
       <img alt="logo do site, mostrando um livro" src="@/components/icons/icon.png" class="img-footer" >
     </div>
     <div class="txt-footer">
-      <h2 class="txt-link" >Sobre nós</h2>
+      <h2 class="txt-link" tabindex="31">Sobre nós</h2>
     </div>
     <div class="txt-footer">
-      <h2 class="txt-link" >Home</h2>
+      <h2 class="txt-link" tabindex="32" @keypress="goToHome()">Home</h2>
     </div>
     <div class="txt-footer">
-      <h2 class="txt-link" >Carrinho</h2>
+      <h2 class="txt-link" tabindex="33" @keypress="goToCarrinho()">Carrinho</h2>
     </div>
     <div class="txt-footer">
-      <h2 class="txt-link " >Perfil do cliente</h2>
+      <h2 class="txt-link " tabindex="34">Perfil do cliente</h2>
     </div>
     <div class="txt-footer">
-      <h2 class="txt-link" >Biblioteca</h2>
+      <h2 class="txt-link" tabindex="35" @keypress="goToBiblioteca()">Biblioteca</h2>
     </div>
     <div class="txt-footer">
-      <h2 class="txt-link" >Atendimento</h2>
+      <h2 class="txt-link" tabindex="36">Atendimento</h2>
     </div>
     
    
@@ -28,7 +28,24 @@
 
 <script>
 export default {
-  name: "Footer"
+  name: "Footer",
+  methods:{
+    goToBook(idLivro) {
+      this.$router.push({ path: "/livro", query: { id: idLivro } });
+    },
+    goToHome() {
+      this.$router.push("/");
+    },
+    goToLogin() {
+      this.$router.push("/login");
+    },
+    goToCarrinho() {
+      this.$router.push("/carrinho");
+    },
+    goToBiblioteca() {
+      this.$router.push("/biblioteca");
+    },
+  }
 }
 </script>
 

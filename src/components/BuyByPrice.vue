@@ -2,9 +2,9 @@
   <div class="buyByPrice" >
    
     <div class="buyByPrice-buttons">
-      <button type="button" class="btn btn-primary buy-button btn-lg">Até R$ 10</button>
-      <button type="button" class="btn btn-primary buy-button btn-lg">Até R$ 20</button>
-      <button type="button" class="btn btn-primary buy-button btn-lg">Até R$ 30</button>
+      <button type="button" class="btn btn-primary buy-button btn-lg" tabindex="21">Até R$ 10</button>
+      <button type="button" class="btn btn-primary buy-button btn-lg" tabindex="22">Até R$ 20</button>
+      <button type="button" class="btn btn-primary buy-button btn-lg" tabindex="23">Até R$ 30</button>
     </div>
   </div>
 </template>

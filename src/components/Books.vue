@@ -10,7 +10,7 @@
     >
       <swiper-slide>
         <div class="card" style="width: 22rem;">
-          <a @click="goToBook()" style="cursor:pointer">
+          <a @click="goToBook()" style="cursor:pointer" tabindex="18" @keypress="goToBook()">
             <img src="../assets/0.jpg" class="card-img-top" alt="Livro 1">
             <div class="card-body">
               <h5 class="card-title nome-livro">Harry Potter</h5>
@@ -23,7 +23,7 @@
 
       <swiper-slide>
         <div class="card" style="width: 22rem;">
-          <a @click="goToBook()" style="cursor:pointer">
+          <a @click="goToBook()" style="cursor:pointer" tabindex="18" @keypress="goToBook()">
             <img src="../assets/1.jpg" class="card-img-top" alt="Livro 1">
             <div class="card-body">
               <h5 class="card-title nome-livro">Eragon</h5>
@@ -36,7 +36,7 @@
 
       <swiper-slide>
         <div class="card" style="width: 22rem;">
-          <a @click="goToBook()" style="cursor:pointer">
+          <a @click="goToBook()" style="cursor:pointer" tabindex="18" @keypress="goToBook()">
             <img src="../assets/2.jpg" class="card-img-top" alt="Livro 1">
             <div class="card-body">
               <h5 class="card-title nome-livro">Crepúsculo</h5>
@@ -49,7 +49,7 @@
 
       <swiper-slide>
         <div class="card" style="width: 22rem;">
-          <a @click="goToBook()" style="cursor:pointer"> 
+          <a @click="goToBook()" style="cursor:pointer" tabindex="18" @keypress="goToBook()"> 
             <img src="../assets/3.jpg" class="card-img-top" alt="Livro 1">
             <div class="card-body">
               <h5 class="card-title nome-livro">Frankenstein</h5>

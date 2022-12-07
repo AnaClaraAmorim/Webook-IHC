@@ -1,16 +1,24 @@
 <script setup>
 import Footer from "@/components/Footer.vue";
 import Menu from "@/components/Menu.vue";
+import MenuMobile from "@/components/MenuMobile.vue";
 
 </script>
 
 <template>
 
-    <Menu
-      :plotDropDown="true"
-      :filter="filterDropdown"
-      :actualCategory="this.$route.query.category"
-    />
+    <div v-if="!isMobile()" class="marginMenu">
+        <Menu
+        :plotDropDown="true"
+        :filter="filterDropdown"
+        :actualCategory="this.$route.query.category"
+        />
+    </div>
+
+    <div v-else>
+        <MenuMobile
+        :plotDropDown="true"></MenuMobile>
+    </div>
 
     <div class="container">
         <div>
@@ -22,23 +30,23 @@ import Menu from "@/components/Menu.vue";
             <span style="font-size:50px; font-weight: bold; display: flex; justify-content: center; width: 150%;">  Login</span>
 
             <span style="display:flex ; align-items:left">Email</span>
-            <input type="email" placeholder="exemplo@email.com" class="InputLogin"/>
+            <input type="email" placeholder="exemplo@email.com" class="InputLogin" tabindex="13"/>
             Senha
-            <input type="text" placeholder="Senha" class="InputLogin"/>
-            <a class="txt-link" style=" cursor: pointer">Esqueceu sua senha?</a>
+            <input type="text" placeholder="Senha" class="InputLogin" tabindex="14"/>
+            <a class="txt-link" style=" cursor: pointer" tabindex="15">Esqueceu sua senha?</a>
 
             
             <!-- COMEÇO DO BOOTSTRAP-->
             <div style="display:flex; width:150%">
-                <button type="submit" class="btn btn-primary btn-lg btn-block" style="width:450%; margin-bottom:40px; margin-top:10px">Login</button>
-                 <span style="margin-left:15px">ou</span> <a class="txt-link" style="width:400%; margin-left: 15px; cursor:pointer"> Criar conta</a>
+                <button type="submit" class="btn btn-primary btn-lg btn-block" style="width:450%; margin-bottom:40px; margin-top:10px" tabindex="16">Login</button>
+                 <span style="margin-left:15px">ou</span> <a class="txt-link" style="width:400%; margin-left: 15px; cursor:pointer" tabindex="17"> Criar conta</a>
             </div>
           <a class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998; width: 150%; margin-bottom: 10px;" href="#!"
-            role="button">
+            role="button" tabindex="18">
             <i class="fab fa-facebook-f me-2"></i>Continue with Facebook
           </a>
           <a class="btn btn-primary btn-lg btn-block" style="background-color: #55acee; width:150%" href="#!"
-            role="button">
+            role="button" tabindex="19">
             <i class="fab fa-twitter me-2"></i>Continue with Twitter</a>
         </div>
     
@@ -46,6 +54,20 @@ import Menu from "@/components/Menu.vue";
         <Footer />
    
 </template>
+
+<script>
+export default{
+    methods:{isMobile() {
+      if(window.screen.availWidth < 700){
+        return true
+      } else {
+        return false
+      }
+    }
+}
+}
+
+</script>
 
 <style scoped>
 
@@ -57,7 +79,7 @@ import Menu from "@/components/Menu.vue";
 .container{
     display: flex;
     justify-content: space-around;
-    margin-top: 150px;
+    margin-top: 30px;
     margin-bottom: 30px;
 }
 
@@ -70,7 +92,7 @@ import Menu from "@/components/Menu.vue";
     border-color:#e3dfd5;
     border-radius: 10px;
     padding-left: 40px;
-    padding-right: 180px;
+    padding-right: 140px;
 }
 
 .InputLogin{
@@ -87,7 +109,7 @@ import Menu from "@/components/Menu.vue";
     color: black;
 }
 
-.NoPai{
-    font-size: larger;
-}
+.marginMenu{
+    margin-bottom: 150px;
+  }
 </style>

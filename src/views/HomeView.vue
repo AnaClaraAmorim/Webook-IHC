@@ -1,7 +1,7 @@
 <script setup>
 import Footer from "@/components/Footer.vue";
 import Menu from "@/components/Menu.vue";
-import MenuMobile from "@/components/MenuMobile.vue"
+import MenuMobile from "@/components/MenuMobile.vue";
 import Carrousel from "@/components/Carrousel.vue";
 import HighlightBanner from "@/components/HighlightBanner.vue";
 import BuyByPrice from "@/components/BuyByPrice.vue";
@@ -18,7 +18,7 @@ e navegar para realizar as ações possíveis do usuário seja ele admin ou user
     <!-- Verifica se usuário é admin e de acordo com os privilegios de acesso mostra menu de admin
   ou de usuário padrão-->
    
-  <div v-if="!isMobile()">
+  <div v-if="!isMobile()" class="marginMenu">
     <Menu
       :plotDropDown="true"
       :filter="filterDropdown"
@@ -27,10 +27,13 @@ e navegar para realizar as ações possíveis do usuário seja ele admin ou user
   </div>
 
   <div v-else>
-    <MenuMobile></MenuMobile>
+    <MenuMobile
+    :plotDropDown="true"></MenuMobile>
   </div>
 
-    <Carrousel class="margin" ></Carrousel>
+    <div  class="margin">
+    <Carrousel></Carrousel>
+   </div>
     <HighlightBanner class="marginBanner" ></HighlightBanner>
     <div class="section" >
       <div class="title">
@@ -38,7 +41,7 @@ e navegar para realizar as ações possíveis do usuário seja ele admin ou user
       </div>
       <Books style="margin:0px 50px 10px 50px"></Books>
     </div>
-    <div class="title buyByPrice-title">
+    <div class="title2 buyByPrice-title">
         Compre por preço
     </div>
     <BuyByPrice ></BuyByPrice>
@@ -238,6 +241,15 @@ export default {
   font-weight: bold;
   margin-bottom: 20px;
   margin-left:50px;
+  color:rgb(0,1,1);
+}
+
+.title2 {
+  font-size: xx-large;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-left:50px;
+  color:black;
 }
 
 .section{
@@ -250,11 +262,14 @@ export default {
   }
 
   .margin{
-    margin:150px 50px 30px 50px;
+    margin: 1px 50px 30px 50px;
   }
 
+  .marginMenu{
+    margin-bottom: 150px;
+  }
   .marginBanner{
-    margin:0px 50px 30px 50px;
+    margin: 1px 50px 30px 50px;
   }
 
    @media (max-width: 600px)
@@ -264,7 +279,7 @@ export default {
       }
 
       .margin{
-        margin:150px 10px 30px 10px;
+        margin:10px 10px 30px 10px;
       }
 
       .marginBanner{

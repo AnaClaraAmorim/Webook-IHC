@@ -1,23 +1,23 @@
 <template>
     <div class="banner">
         <div class="banner-img-txt lancamento">
-            <img alt="icone indicando comemoração" src="../components/icons/party.png"  class="circle-icon">
+            <img alt="icone indicando comemoração" src="../components/icons/party.png"  class="circle-icon" tabindex="13">
             <p>Lançamentos</p>
         </div>
         <div class="banner-img-txt">
-            <img  alt="icone com alguns livros" src="../components/icons/livro.png"  class="circle-icon">
+            <img  alt="icone com alguns livros" src="../components/icons/livro.png"  class="circle-icon" tabindex="14">
             <p>Minha Biblioteca</p>
         </div>
         <div class="banner-img-txt">
-            <img  alt="símbolo de porcentagem indicando descontos" src="../components/icons/promotions.png"  class="circle-icon">
+            <img  alt="símbolo de porcentagem indicando descontos" src="../components/icons/promotions.png"  class="circle-icon" tabindex="15">
             <p>Promoções</p>
         </div>
         <div class="banner-img-txt">
-            <img  alt="presente" src="../components/icons/gift.png"  class="circle-icon">
+            <img  alt="presente" src="../components/icons/gift.png"  class="circle-icon" tabindex="16">
             <p>Dicas de presente</p>
         </div>
          <div class="banner-img-txt">
-            <img  alt="etiqueta" src="../components/icons/price-tag.png"  class="circle-icon">
+            <img  alt="etiqueta" src="../components/icons/price-tag.png"  class="circle-icon" tabindex="17">
             <p>Mais vendidos</p>
         </div>
       

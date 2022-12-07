@@ -5,7 +5,7 @@
   >
     <div class="container-fluid" style="display: flex; justify-content: space-around;">
       <div class="FlexN1">
-          <a class="" @click="goToHome()" style="cursor:pointer">
+          <a class="" @click="goToHome()" style="cursor:pointer" tabindex="1" @keypress="goToHome()">
             <img
               alt="logo do site, mostrando um livro"
               class="img-navbar"
@@ -21,6 +21,7 @@
             name="livros"
             id="book-select"
             style="width: 70%;"
+            tabindex="2"
 
             @change="filter(this.$refs.drop.value)"
             v-model="this.dropdownCategory"
@@ -29,6 +30,7 @@
               Selecione a categoria
             </option>
             <option value="-2">Todos os livros</option>
+            <option value="-3">Ficção</option>
             <option
               v-for="categorie in getAllCategories()"
               v-bind:value="categorie.id"
@@ -46,13 +48,14 @@
                 placeholder="Busque um livro"
                 v-model="textSearch"
                 @focusout="active = false"
+                tabindex="3"
               />
           </div>
           <div>
               <span
               class="input-group-text"
               style=" height: 50px; background-color:rgb(233, 237, 239) "
-              ><a style="cursor:pointer; height:40px" ><img alt="lupa" src="@/components/icons/research.png" style="width:30px; height:30px"/></a>
+              ><a style="cursor:pointer; height:40px" tabindex="4" ><img alt="lupa" src="@/components/icons/research.png" style="width:30px; height:30px"/></a>
              
               </span>
             </div> 
@@ -66,6 +69,8 @@
               class=""
               @click="goToLogin()"
               style="height: 62px; width: 40%; cursor:pointer"
+              tabindex="5"
+              @keypress="goToLogin()"
               ><img
                 alt="icone com uma pessoa"
                 class="img-navbar"
@@ -79,6 +84,8 @@
                 class="img-navbar"
                 src="@/components/icons/logout.png"
                 style="height: 50px; width: 40%; cursor: pointer;"
+                tabindex="5"
+                @keypress="logout()"
             /></a>  
 
             <a class="" @click="goToBiblioteca()" style="cursor:pointer; margin:8px">
@@ -87,10 +94,12 @@
                 class="img-navbar"
                 src="@/components/icons/Carrinho.png"
                 style="height: 50px; width: 50%; "
+                tabindex="6"
+                @keypress="goToBiblioteca()"
               /><span class="txt-navbar">Carrinho</span></a>
 
             <a class="" @click="goToCarrinho()" 
-              style="height: 65px; width: 40%; cursor:pointer"
+              style="height: 65px; width: 40%; cursor:pointer" tabindex="7" @keypress="goToCarrinho()"
               >
               <img
                 alt="icone com alguns livros"
@@ -101,13 +110,13 @@
             </a>
           </div>
           <div>
-            <img src="../components/icons/icons8-increase-font-32.png" @click="AumentaFonte()" style="cursor:pointer">
+            <img src="../components/icons/icons8-increase-font-32.png" @click="AumentaFonte()" style="cursor:pointer" tabindex="8" @keypress="AumentaFonte()">
           </div>
           <div>
-            <img src="../components/icons/icons8-decrease-font-32.png" @click="DiminuiFonte()" style="cursor:pointer">
+            <img src="../components/icons/icons8-decrease-font-32.png" @click="DiminuiFonte()" style="cursor:pointer" tabindex="9" @keypress="DiminuiFonte()">
           </div>
           <div>
-            <img src="../components/icons/icons8-contrast-32.png" @click="Contraste()" style="cursor:pointer">
+            <img src="../components/icons/icons8-contrast-32.png" @click="Contraste()" style="cursor:pointer" tabindex="10" @keypress="Contraste()">
           </div>
         </div>
       </div>
@@ -256,7 +265,7 @@ export default {
             }
 
             if(currentFontColor=="rgb(33, 37, 41)"){
-              element.style.color = "rgb(256, 256, 254)";
+              element.style.color = "rgb(0, 0, 0)";
             }
             if(currentFontColor=="rgb(255, 255, 254)"){
               element.style.color = "rgb(33, 37, 41)";
