@@ -6,6 +6,8 @@ import Carrousel from "@/components/Carrousel.vue";
 import HighlightBanner from "@/components/HighlightBanner.vue";
 import BuyByPrice from "@/components/BuyByPrice.vue";
 import Books from "@/components/Books.vue";
+import Books2 from "@/components/Books2.vue";
+
 </script>
 
 
@@ -49,7 +51,7 @@ e navegar para realizar as ações possíveis do usuário seja ele admin ou user
       <div class="title">
         Lançamentos
       </div>
-      <Books style="margin:0px 50px 10px 50px"></Books>
+      <Books2 style="margin:0px 50px 10px 50px"></Books2>
     </div>
     <!-- Chama o component do footer -->
     <Footer />
