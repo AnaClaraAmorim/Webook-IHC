@@ -30,8 +30,8 @@ e navegar para realizar as ações possíveis do usuário seja ele admin ou user
     <MenuMobile></MenuMobile>
   </div>
 
-    <Carrousel style="margin:150px 50px 30px 50px"></Carrousel>
-    <HighlightBanner style="margin:0px 50px 30px 50px"></HighlightBanner>
+    <Carrousel class="margin" ></Carrousel>
+    <HighlightBanner class="marginBanner" ></HighlightBanner>
     <div class="section" >
       <div class="title">
         Destaques
@@ -41,7 +41,7 @@ e navegar para realizar as ações possíveis do usuário seja ele admin ou user
     <div class="title buyByPrice-title">
         Compre por preço
     </div>
-    <BuyByPrice style="margin:0px 50px 100px 50px"></BuyByPrice>
+    <BuyByPrice ></BuyByPrice>
     <div class="section" >
       <div class="title">
         Lançamentos
@@ -248,4 +248,27 @@ export default {
  .buyByPrice-title{
     margin-bottom:80px;
   }
+
+  .margin{
+    margin:150px 50px 30px 50px;
+  }
+
+  .marginBanner{
+    margin:0px 50px 30px 50px;
+  }
+
+   @media (max-width: 600px)
+    {
+      .buyByPrice-title{
+        margin-bottom:30px;
+      }
+
+      .margin{
+        margin:150px 10px 30px 10px;
+      }
+
+      .marginBanner{
+        margin:0px 10px 30px 10px;
+      }
+    }
 </style>

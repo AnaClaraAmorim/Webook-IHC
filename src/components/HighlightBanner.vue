@@ -1,6 +1,6 @@
 <template>
     <div class="banner">
-        <div class="banner-img-txt">
+        <div class="banner-img-txt lancamento">
             <img alt="icone indicando comemoração" src="../components/icons/party.png"  class="circle-icon">
             <p>Lançamentos</p>
         </div>
@@ -48,12 +48,11 @@
     align-self: center;
     flex-direction: column;
     text-align: center;
-
     font-family: 'Grape Nuts', cursive;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: bold;
-  font-size: 20px;
-  color:black;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color:black;
 }
 
 .banner-img-txt:hover{
@@ -70,5 +69,22 @@
 
 .circle-icon:hover{
     background: #e6e5e5;
+}
+
+@media (max-width: 600px){
+    .banner{
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap ;
+        height: 70vh;
+
+    }
+
+    .banner-img-txt{
+    height: 20vh;
+    font-size: 1em;
+
+    }
+
 }
 </style>

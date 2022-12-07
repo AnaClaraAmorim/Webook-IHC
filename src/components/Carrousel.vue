@@ -6,10 +6,10 @@
       <img alt="banner com promoções" src="../components/banner/banner3.webp" class="img-show" />
     </div>
     <button @click="next()" class="btn-carrosel direito">
-      <img alt="seta indicando rolar o carrosel para direita" class="icon" src="../components/icons/right-chevron.png" /> Proximo
+      <img alt="seta indicando rolar o carrosel para direita" class="icon" src="../components/icons/right-chevron.png" /> 
     </button>
     <button @click="prev()" class="btn-carrosel esquerdo">
-      Anterior <img alt="seta indicando rolar o carrossel para esquerda" class="icon" src="../components/icons/chevron-pointing-to-the-left.png"  />
+       <img alt="seta indicando rolar o carrossel para esquerda" class="icon" src="../components/icons/chevron-pointing-to-the-left.png"  />
     </button>
   </div>
 </template>
@@ -87,4 +87,31 @@ export default {
   width: 30px;
   height: 30px;
 }
+
+ @media (max-width: 600px){
+  :root {
+  --img-height: 150px;
+  --img-width: 800px;
+}
+.img-show {
+  height: 0px;
+  width: 0px;
+  
+}
+.img-show.active {
+  height: 150px;
+  width: 100%;
+}
+
+.direito {
+  right: 2px;
+}
+.esquerdo {
+  left: 2px;
+}
+
+.btn-carrosel {
+  top: calc(150px / 2);
+}
+ }
 </style>
