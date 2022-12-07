@@ -1,7 +1,7 @@
 <template>
 <div class="carrousel">
   <swiper
-      :slidesPerView="3"
+      :slidesPerView=this.booksPerView
       :spaceBetween="30"
       :navigation="true"
       :loop="true"
@@ -85,9 +85,31 @@ export default {
       modules: [Navigation],
     };
   },
+  data(){
+    return {
+      window: {
+            width: 0,
+            height: 0
+        },
+      booksPerView : 3
+    }
+  },
+  mounted(){
+    window.addEventListener('resize', this.handleResize);
+    this.handleResize();
+  },
   methods:{
     goToBook(){
       this.$router.push("/book");
+    },
+    handleResize() {
+      this.window.width = window.innerWidth;
+      if(this.window.width < 500){
+        this.booksPerView = 1;
+      }else{
+        this.booksPerView = 3;
+      }
+      this.window.height = window.innerHeight;
     }
 
   }
