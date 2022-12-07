@@ -91,7 +91,13 @@ export default {
  padding-left:10px ;
 }
 
- @media (max-width: 600px)
+ @media (max-width: 1000px){
+.txt-link{
+        font-size: 1em;
+      }
+ }
+
+ @media (max-width: 768px)
     {
       .txt-link{
         font-size: 0.8em;

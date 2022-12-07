@@ -5,11 +5,11 @@
       <img alt="banner com promoções" src="../components/banner/banner2.jpg" class="img-show" />
       <img alt="banner com promoções" src="../components/banner/banner3.webp" class="img-show" />
     </div>
-    <button @click="next()" class="btn-carrosel direito" tabindex="11" @keypress="next()">
-      <img alt="seta indicando rolar o carrosel para direita" class="icon" src="../components/icons/right-chevron.png" /> 
+    <button @click="next()" class="btn-carrosel direito"  @keypress="next()">
+      <img tabindex="11" alt="seta indicando rolar o carrosel para direita" class="icon" src="../components/icons/right-chevron.png" /> 
     </button>
-    <button @click="prev()" class="btn-carrosel esquerdo" tabindex="12" @keypress="prev()">
-       <img alt="seta indicando rolar o carrossel para esquerda" class="icon" src="../components/icons/chevron-pointing-to-the-left.png"  />
+    <button @click="prev()" class="btn-carrosel esquerdo"  @keypress="prev()">
+       <img tabindex="12" alt="seta indicando rolar o carrossel para esquerda" class="icon" src="../components/icons/chevron-pointing-to-the-left.png"  />
     </button>
   </div>
 </template>
@@ -87,7 +87,20 @@ export default {
   width: 30px;
   height: 30px;
 }
-
+@media (max-width: 900px)
+{
+  :root {
+  --img-height: 250px;
+  --img-width: 800px;
+}
+.img-show.active {
+  height: 250px;
+  width: 100%;
+}
+.btn-carrosel {
+  top: calc(250px / 2);
+}
+}
  @media (max-width: 600px){
   :root {
   --img-height: 150px;
@@ -114,4 +127,5 @@ export default {
   top: calc(150px / 2);
 }
  }
+
 </style>

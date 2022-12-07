@@ -65,7 +65,7 @@
             
           >
             <option value="-1" disabled hidden selected>
-              Selecione a categoria
+              Genêros
             </option>
             <option value="-2"><span>Todos os livros</span></option>
             <option value="-3"><span>Ficção</span></option>
@@ -259,6 +259,9 @@
   color:black;
 }
 
+.img-navbar{
+  width: 80px;
+}
 </style>
 
 

@@ -71,12 +71,13 @@
     background: #e6e5e5;
 }
 
-@media (max-width: 600px){
+@media (max-width: 800px){
     .banner{
         display: flex;
         justify-content: space-evenly;
         flex-wrap: wrap ;
-        height: 70vh;
+       height: auto;
+       padding: 10px 0;
 
     }
 

@@ -62,7 +62,24 @@ export default {
   .buyByPrice{
     margin:0px 50px 100px 50px;
   }
+    @media (max-width: 900px)
+{
+      .buy-button{
+        font-size: 1.5em;
+        width: 400px;
 
+      }
+
+      .buyByPrice-buttons{
+        margin-left: 0px;
+        margin-right: 0px;
+       
+      }
+
+      .buyByPrice{
+        margin:0px 5px 30px 5px;
+      } 
+    }
     @media (max-width: 600px)
     {
       .buy-button{
