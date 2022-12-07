@@ -238,11 +238,20 @@ export default {
               element.style.backgroundColor = "rgb(232, 232, 232)"
             }
 
-            //console.log(currentBackColor)
+            if(currentBackColor == "rgb(195, 191, 191)")
+            {
+              element.style.backgroundColor = "rgb(28, 33, 29)"
+            }
+
+            if(currentBackColor == "rgb(28, 33, 29)")
+            {
+              element.style.backgroundColor = "rgb(195, 191, 191)"
+            }
+            //FONTES
             if(currentFontColor == "rgb(0, 0, 0)"){
               element.style.color = "rgb(256, 256, 255)";
             }
-            if(currentFontColor == "rgb(256, 256, 255)"){
+            if(currentFontColor == "rgb(256, 256, 255)" || currentFontColor == "rgb(255, 255, 255)"){
               element.style.color = "rgb(0, 0, 0)";
             }
 

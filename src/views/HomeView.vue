@@ -1,6 +1,7 @@
 <script setup>
 import Footer from "@/components/Footer.vue";
 import Menu from "@/components/Menu.vue";
+import MenuMobile from "@/components/MenuMobile.vue"
 import Carrousel from "@/components/Carrousel.vue";
 import HighlightBanner from "@/components/HighlightBanner.vue";
 import BuyByPrice from "@/components/BuyByPrice.vue";
@@ -17,11 +18,17 @@ e navegar para realizar as ações possíveis do usuário seja ele admin ou user
     <!-- Verifica se usuário é admin e de acordo com os privilegios de acesso mostra menu de admin
   ou de usuário padrão-->
    
+  <div v-if="!isMobile()">
     <Menu
       :plotDropDown="true"
       :filter="filterDropdown"
       :actualCategory="this.$route.query.category"
     />
+  </div>
+
+  <div v-else>
+    <MenuMobile></MenuMobile>
+  </div>
 
     <Carrousel style="margin:150px 50px 30px 50px"></Carrousel>
     <HighlightBanner style="margin:0px 50px 30px 50px"></HighlightBanner>
@@ -192,6 +199,13 @@ export default {
       if (account === null) return false;
       return account.adm === true;
     },
+    isMobile() {
+      if(window.screen.availWidth < 700){
+        return true
+      } else {
+        return false
+      }
+    }
   },
   data() {
     return {

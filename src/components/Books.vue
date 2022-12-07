@@ -10,45 +10,53 @@
     >
       <swiper-slide>
         <div class="card" style="width: 22rem;">
-          <img src="../assets/0.jpg" class="card-img-top" alt="Livro 1">
-          <div class="card-body">
-            <h5 class="card-title nome-livro">Harry Potter</h5>
-            <p class="card-text autor-livro">J.K. ROWLING</p>
-            <p class="card-text preco-livro">R$ 39,90</p>
-          </div>
+          <a @click="goToBook()" style="cursor:pointer">
+            <img src="../assets/0.jpg" class="card-img-top" alt="Livro 1">
+            <div class="card-body">
+              <h5 class="card-title nome-livro">Harry Potter</h5>
+              <p class="card-text autor-livro">J.K. ROWLING</p>
+              <p class="card-text preco-livro">R$ 39,90</p>
+            </div>
+          </a> 
         </div>
       </swiper-slide>
 
       <swiper-slide>
         <div class="card" style="width: 22rem;">
-          <img src="../assets/1.jpg" class="card-img-top" alt="Livro 1">
-          <div class="card-body">
-            <h5 class="card-title nome-livro">Eragon</h5>
-            <p class="card-text autor-livro">Christopher Paolini</p>
-            <p class="card-text preco-livro">R$ 36,97</p>
-          </div>
+          <a @click="goToBook()" style="cursor:pointer">
+            <img src="../assets/1.jpg" class="card-img-top" alt="Livro 1">
+            <div class="card-body">
+              <h5 class="card-title nome-livro">Eragon</h5>
+              <p class="card-text autor-livro">Christopher Paolini</p>
+              <p class="card-text preco-livro">R$ 36,97</p>
+            </div>
+          </a>  
         </div>
       </swiper-slide>
 
       <swiper-slide>
         <div class="card" style="width: 22rem;">
-          <img src="../assets/2.jpg" class="card-img-top" alt="Livro 1">
-          <div class="card-body">
-            <h5 class="card-title nome-livro">Crepúsculo</h5>
-            <p class="card-text autor-livro">Stephenie Meyer</p>
-            <p class="card-text preco-livro">R$ 52,40</p>
-          </div>
+          <a @click="goToBook()" style="cursor:pointer">
+            <img src="../assets/2.jpg" class="card-img-top" alt="Livro 1">
+            <div class="card-body">
+              <h5 class="card-title nome-livro">Crepúsculo</h5>
+              <p class="card-text autor-livro">Stephenie Meyer</p>
+              <p class="card-text preco-livro">R$ 52,40</p>
+            </div>
+          </a>  
         </div>
       </swiper-slide>
 
       <swiper-slide>
         <div class="card" style="width: 22rem;">
-          <img src="../assets/3.jpg" class="card-img-top" alt="Livro 1">
-          <div class="card-body">
-            <h5 class="card-title nome-livro">Frankenstein</h5>
-            <p class="card-text autor-livro">Mary Shelley</p>
-            <p class="card-text preco-livro">R$ 39,90</p>
-          </div>
+          <a @click="goToBook()" style="cursor:pointer"> 
+            <img src="../assets/3.jpg" class="card-img-top" alt="Livro 1">
+            <div class="card-body">
+              <h5 class="card-title nome-livro">Frankenstein</h5>
+              <p class="card-text autor-livro">Mary Shelley</p>
+              <p class="card-text preco-livro">R$ 39,90</p>
+            </div>
+          </a> 
         </div>
       </swiper-slide>
     </swiper>
@@ -77,6 +85,12 @@ export default {
       modules: [Navigation],
     };
   },
+  methods:{
+    goToBook(){
+      this.$router.push("/book");
+    }
+
+  }
 };
 </script>
 
