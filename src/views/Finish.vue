@@ -18,28 +18,28 @@ import Menu from "@/components/Menu.vue";
       <p>Seus cartões de crédito:</p>
       <fieldset>
         <div class="card-div">
-          <input type="radio" name="payment_name" />
-          <span> Cartão do Harry Potter terminado em 1010 - Nubank </span>
+          <input type="radio" name="payment_name" tabindex="11" value="0"/>
+          <span > Cartão do Harry Potter terminado em 1010 - Nubank </span>
         </div>
         <div class="card-div">
-          <input type="radio" name="payment_name" />
-          <span>
+          <input type="radio" name="payment_name" tabindex="12" value="1"/>
+          <span >
             Cartão do Harry Potter terminado em 2020 - Banco do brasil
           </span>
         </div>
         <p>Boleto:</p>
         <div class="card-div">
-          <input type="radio" name="payment_name" />
-          <span> Vencimento em 1 dia útil </span>
+          <input type="radio" name="payment_name" tabindex="13" value="2"/>
+          <span > Vencimento em 1 dia útil </span>
         </div>
         <p>Pix:</p>
         <div class="card-div">
-          <input type="radio" name="payment_name" />
-          <span> Vencimento em 30 minutos </span>
+          <input type="radio" name="payment_name" tabindex="14" value="33"/>
+          <span > Vencimento em 30 minutos </span>
         </div>
       </fieldset>
       <center>
-        <button type="button" class="btn btn-warning finalizar-btn" @click="goToSucess()">
+        <button type="button" class="btn btn-warning finalizar-btn" @click="goToSucess()" tabindex="17"> 
           Finalizar Pedido
         </button>
       </center>
@@ -51,7 +51,7 @@ import Menu from "@/components/Menu.vue";
       <center>
         <div class="card-shadow">
           <div class="book-finish">
-            <input type="checkbox" />
+            <input type="checkbox" tabindex="15" />
             <img
               src="../assets/0.jpg"
               class="card-img"
@@ -74,6 +74,7 @@ import Menu from "@/components/Menu.vue";
           class="btn btn-warning finalizar-btn"
           data-bs-toggle="modal"
           data-bs-target="#exampleModalCenter"
+          tabindex="16"
         >
           Comprar de presente
         </button>
