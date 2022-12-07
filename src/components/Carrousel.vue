@@ -5,10 +5,10 @@
       <img alt="banner com promoções" src="../components/banner/banner2.jpg" class="img-show" />
       <img alt="banner com promoções" src="../components/banner/banner3.webp" class="img-show" />
     </div>
-    <button @click="next()" class="btn-carrosel direito">
+    <button @click="next()" class="btn-carrosel direito" tabindex="11" @keypress="next()">
       <img alt="seta indicando rolar o carrosel para direita" class="icon" src="../components/icons/right-chevron.png" /> 
     </button>
-    <button @click="prev()" class="btn-carrosel esquerdo">
+    <button @click="prev()" class="btn-carrosel esquerdo" tabindex="12" @keypress="prev()">
        <img alt="seta indicando rolar o carrossel para esquerda" class="icon" src="../components/icons/chevron-pointing-to-the-left.png"  />
     </button>
   </div>
