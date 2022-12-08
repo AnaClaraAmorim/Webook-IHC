@@ -19,31 +19,31 @@ import MenuMobile from "@/components/MenuMobile.vue";
   </div>
   <div class="finish">
     <div class="dados">
-      <h1 style="text-align: center; padding-top: 10px">
+      <h1 style="text-align: center; padding-top: 10px; color: black;">
         Finalizar sua compra
       </h1>
-      <h3 class="txt-pagamento">Selecione um método de pagamento:</h3>
-      <p>Seus cartões de crédito:</p>
+      <h3 class="txt-pagamento" style="color:black">Selecione um método de pagamento:</h3>
+      <p style="color:black">Seus cartões de crédito:</p>
       <fieldset>
         <div class="card-div">
           <input type="radio" name="payment_name" tabindex="11" value="0"/>
-          <span > Cartão do Harry Potter terminado em 1010 - Nubank </span>
+          <span style="color:black"> Cartão do Harry Potter terminado em 1010 - Nubank </span>
         </div>
         <div class="card-div">
           <input type="radio" name="payment_name" tabindex="12" value="1"/>
-          <span >
+          <span style="color: black;">
             Cartão do Harry Potter terminado em 2020 - Banco do brasil
           </span>
         </div>
         <p>Boleto:</p>
         <div class="card-div">
           <input type="radio" name="payment_name" tabindex="13" value="2"/>
-          <span > Vencimento em 1 dia útil </span>
+          <span style="color:black"> Vencimento em 1 dia útil </span>
         </div>
         <p>Pix:</p>
         <div class="card-div">
           <input type="radio" name="payment_name" tabindex="14" value="33"/>
-          <span > Vencimento em 30 minutos </span>
+          <span style="color:black"> Vencimento em 30 minutos </span>
         </div>
       </fieldset>
       <center>
@@ -73,7 +73,7 @@ import MenuMobile from "@/components/MenuMobile.vue";
             </div>
           </div>
 
-          <p>Total: R$39,90</p>
+          <p style="color:black">Total: R$39,90</p>
         </div>
       </center>
       <center>
@@ -192,6 +192,7 @@ export default {
   font-size: 1.5em;
   width: 24vw;
   margin-top: 50px;
+  color:rgb(0,2,2);
 }
 
 .present-btn {

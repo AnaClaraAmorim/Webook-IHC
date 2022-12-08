@@ -23,10 +23,10 @@ import MenuMobile from "@/components/MenuMobile.vue"
     <div class="container">
        
     <center>
-        <h1>Compra finalizada com sucesso!</h1>
-        <p> Você pode começar a ler seu e-book agora mesmo na Biblioteca!</p>
+        <h1 style="color:black">Compra finalizada com sucesso!</h1>
+        <p style="color:black"> Você pode começar a ler seu e-book agora mesmo na Biblioteca!</p>
         <button type="button" class="btn btn-warning sucess-btn"  data-bs-dismiss="modal"
-              aria-label="Close">
+              aria-label="Close" style="color:rgb(0,2,1)">
               Ir para a biblioteca
             </button>
     </center>

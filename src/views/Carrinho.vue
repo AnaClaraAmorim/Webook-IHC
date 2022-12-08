@@ -30,27 +30,27 @@ import MenuMobile from "@/components/MenuMobile.vue";
                         <img src="../assets/0.jpg" class="ImagemLivro"/>
                     </div>
                     <div>
-                        <h1 class="title">Harry Potter e a Pedra Filosofal</h1>
+                        <h1 class="title" style="color:black">Harry Potter e a Pedra Filosofal</h1>
                     </div>
                     <div class="counter"></div>
                     <div class="prices"></div>
                     <div class="counter">
-                        <div class="btn-counter">+</div>
+                        <div class="btn-counter" tabindex="18">+</div>
                         <div class="count">2</div>
-                        <div class="btn-counter">-</div>
+                        <div class="btn-counter" tabindex="19">-</div>
                     </div>
                     <div class="prices">
-                        <h3>R$39,99</h3>
-                        <div class="remove"><u>Remover</u></div>
+                        <h3 style="color:black">R$39,99</h3>
+                        <div class="remove" tabindex="20"><u>Remover</u></div>
                     </div>
                 </div>
             </div>
             <div style="display: flex; justify-content: center; flex-direction:column; margin-left: 50px;">
                 <div class="Preco-Container">
-                    <h1> Total</h1>
-                    <h1> R$79,98</h1>
+                    <h1 style="color:black"> Total</h1>
+                    <h1 style="color:black"> R$79,98</h1>
                 </div>
-                <button type="submit" class="btn btn-finalizar-pedido" style="width:100%; margin-top:10px">Finalizar pedido</button>
+                <button type="submit" @click="goToFinalizar()" class="btn btn-finalizar-pedido" style="width:100%; margin-top:10px; color:rgb(0,2,2)" tabindex="20" @keypress="goToFinalizar()">Finalizar pedido</button>
             </div>
         </div>
     </div>
@@ -68,6 +68,9 @@ export default{
         } else {
         return false
         }
+        },
+        goToFinalizar(){
+            this.$router.push("/finalizar")
         }
     }
 }
@@ -138,12 +141,11 @@ export default{
  font-size: 20px;
  font-family: 'Open Sans';
  font-weight: 900;
- color: #202020;
+ color: black;
 }
 
 .prices{
  text-align: right;
- 
 }
 
 .remove{
