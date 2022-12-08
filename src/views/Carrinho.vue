@@ -22,8 +22,8 @@ import MenuMobile from "@/components/MenuMobile.vue";
 
     
     <div class="body-container">
-        <h1> Meus itens </h1>
-        <div style="display: flex; justify-content: start; flex-direction:row">
+        <h1 > Meus itens </h1>
+        <div class="content" >
             <div class="Cart-Container">
                 <div class="Cart-Items">
                     <div class="image-box">
@@ -35,9 +35,9 @@ import MenuMobile from "@/components/MenuMobile.vue";
                     <div class="counter"></div>
                     <div class="prices"></div>
                     <div class="counter">
-                        <div class="btn-counter" tabindex="18">+</div>
+                        <div class="btn-counter" tabindex="18">-</div>
                         <div class="count">2</div>
-                        <div class="btn-counter" tabindex="19">-</div>
+                        <div class="btn-counter" tabindex="19">+</div>
                     </div>
                     <div class="prices">
                         <h3 style="color:black">R$39,99</h3>
@@ -45,7 +45,7 @@ import MenuMobile from "@/components/MenuMobile.vue";
                     </div>
                 </div>
             </div>
-            <div style="display: flex; justify-content: center; flex-direction:column; margin-left: 50px;">
+            <div class="total" >
                 <div class="Preco-Container">
                     <h1 style="color:black"> Total</h1>
                     <h1 style="color:black"> R$79,98</h1>
@@ -84,7 +84,7 @@ export default{
  margin-top: 150px;
  margin-left: 50px;
  padding: 0;
- height: 100vh;
+ height: 70.9vh;
  display: flex;
  flex-direction: column;
  justify-content: start;
@@ -108,6 +108,7 @@ export default{
  display: flex;
  justify-content: space-between;
  align-items: center;
+
 }
 .image-box{
  text-align: center;
@@ -164,6 +165,8 @@ export default{
     border-style: solid;
     border-color:#e3dfd5;
     padding: 30px;
+    border-radius: 10px;
+
 }
 .ImagemLivro{
     height: 120px;
@@ -177,6 +180,70 @@ export default{
 }
 .btn-finalizar-pedido:hover{
     background-color: #dfba27;
+}
+
+.content{
+    display: flex; 
+    justify-content: start; 
+    flex-direction:row;
+}
+
+.total{
+    display: flex; 
+    justify-content: center; 
+    flex-direction:column; 
+    margin-left: 50px;
+}
+
+@media screen and (max-width: 600px) {
+.content{
+    flex-direction:column;
+    padding: 0 10px;
+
+}
+
+.body-container{
+ margin-top: 30px;
+ margin-left: 0px;
+ padding: 0;
+ height: auto;
+ display: flex;
+ flex-direction: column;
+ justify-content: start;
+ text-align: center;
+ 
+}
+
+.Cart-Container{
+    width: 100%;
+    margin: 10px 0;
+}
+
+.Cart-Items{
+ margin: 0;
+ width: 90%;
+ height: 30%;
+ display: flex;
+ align-items: center;
+
+ justify-content: center;
+ flex-direction: column;
+ padding: 20px 0;
+}
+
+.remove{
+    padding-right:15px ;
+}
+
+.total{
+
+    margin-left: 0px;
+    margin-bottom: 50px;
+}
+
+.btn-finalizar-pedido{
+    font-size: 1em;
+}
 }
 
 </style>
