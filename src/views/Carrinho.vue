@@ -23,6 +23,8 @@ import MenuMobile from "@/components/MenuMobile.vue";
     
     <div class="body-container">
         <h1 > Meus itens </h1>
+         <span style="margin-left: 0px; font-size: large">Os livros já são quase seus: 1/2</span>
+        <div style="width: 20%; background-color: #ffd117; height: 10px; margin-bottom: 20px"/>
         <div class="content" >
             <div class="Cart-Container">
                 <p class="Msg"></p>

@@ -22,6 +22,8 @@ import MenuMobile from "@/components/MenuMobile.vue";
       <h1 style="text-align: center; padding-top: 10px; color: black;">
         Finalizar sua compra
       </h1>
+      <span style="margin-left: 0px; font-size: large">Última etapa de pagamento: 2/2</span>
+        <div style="width: 95%; background-color: #ffd117 ; height: 10px; margin-left: 0px"/>
       <h3 class="txt-pagamento" style="color:black">Selecione um método de pagamento:</h3>
       <p style="color:black">Seus cartões de crédito:</p>
       <fieldset>
