@@ -253,6 +253,8 @@ export default {
     display: flex;
     flex-direction: column-reverse;
     height: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 
   .dados {
