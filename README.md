@@ -16,11 +16,16 @@
 
 ## Conteúdo:
 
+Para acessar o projeto hosteado no FireBase:
+https://webook-7b29b.web.app
+
 Para rodar o projeto:
 
 npm install
 
 npm run dev
+
+
 
 
 
