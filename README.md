@@ -16,12 +16,11 @@
 
 ## Conteúdo:
 
-- [Requisitos](#requisitos)
-- [Descrição](#descrição)
-- [Comentários sobre o Código](#comentários-sobre-o-código)
-- [Plano de Teste](#plano-de-teste)
-- [Reultados dos Testes](#resultados-dos-testes)
-- [Building](#building)
-- [Problemas](#problemas)
-- [Comentários](#comentários)
+Para rodar o projeto:
+
+npm install
+
+npm run dev
+
+
 
