@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import Login from '../views/Login.vue'
+import Biblioteca from '../views/Biblioteca.vue'
 /**
  * Responsável por criar as rotas do site, cada rota tem um arquivo na pasta view que
  * corresponde ao conteudo mostrado na rota.
@@ -22,7 +23,13 @@ const router = createRouter({
             path:'/login',
             name: 'login',
             component: Login
+        },
+        {
+            path:'/biblioteca',
+            name: 'biblioteca',
+            component: Biblioteca
         }
+
     ]
 })
 
