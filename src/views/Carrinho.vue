@@ -79,7 +79,8 @@ export default{
             }else if(localStorage.getItem("logado") == "false" ){   
                 this.$router.push("/login")
             }else{
-                this.$router.push("/finalizar")
+                var atual = document.getElementsByClassName("count")[0].innerHTML
+                if(atual != "0") this.$router.push("/finalizar")
             }
         
         },

@@ -49,7 +49,7 @@ import MenuMobile from "@/components/MenuMobile.vue";
                     </div>
                     <div class="Preco" style="display:flex; flex-direction: column; align-items: center;">
                         <div class="Valor">
-                            <span style="color:black; weight:bold; font-size: 25px">R$ 39,90</span>
+                            <span style="color:black; weight:bold; font-size: 25px">R$ 39.90</span>
                         </div>
 
                         <div class="Botao">
