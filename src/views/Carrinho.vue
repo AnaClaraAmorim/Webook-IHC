@@ -27,7 +27,7 @@ import MenuMobile from "@/components/MenuMobile.vue";
             <div class="Cart-Container">
                 <div class="Cart-Items">
                     <div class="image-box">
-                        <img src="../assets/0.jpg" class="ImagemLivro"/>
+                        <img src="../assets/0.jpg" class="ImagemLivro" alt="capa do livro"/>
                     </div>
                     <div>
                         <h1 class="title" style="color:black">Harry Potter e a Pedra Filosofal</h1>

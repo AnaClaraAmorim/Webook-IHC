@@ -61,32 +61,32 @@ export default {
       book_details:[
         {
           name: "Harry Potter e a pedra filosofal",     
-          img: "../assets/0.jpg",
+          img: "/assets/0.2516068b.jpg",
           author: "JK Rowling"
                 },
                 {
           name: "Eragon",     
-          img: "../assets/1.jpg",
+          img: "/assets/1.e7281dd3.jpg",
           author: "Christopher Paolini"
                 },
                 {
           name: "Crepúsculo",     
-          img: "../assets/2.jpg",
+          img: "/assets/2.373fc438.jpg",
           author: "Stephanie Meyer"
                 },
                 {
           name: "Frankeinstein",     
-          img: "../assets/3.jpg",
+          img: "/assets/3.5b82b28a.jpg",
           author: "Mary Shelley"
                 },
                 {
           name: "Harry Potter e a pedra filosofal",     
-          img: "../assets/0.jpg",
+          img: "/assets/0.2516068b.jpg",
           author: "JK Rowling"
                 },
                 {
           name: "Harry Potter e a pedra filosofal",     
-          img: "../assets/0.jpg",
+          img: "/assets/0.2516068b.jpg",
           author: "JK Rowling"
                 },
                 

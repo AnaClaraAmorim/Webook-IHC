@@ -9,6 +9,7 @@
             <img
               alt="logo do site, mostrando um livro"
               class="img-navbar"
+              style="width:120%"
               src="@/components/icons/icon.png"  
             />
           </a>
@@ -27,7 +28,7 @@
             v-model="this.dropdownCategory"
           >
             <option value="-1" disabled hidden selected>
-              Selecione a categoria
+              Categorias
             </option>
             <option value="-2">Todos os livros</option>
             <option value="-3">Ficção</option>
@@ -68,7 +69,7 @@
               v-if="!hadUser()"
               class=""
               @click="goToLogin()"
-              style="height: 62px; width: 40%; cursor:pointer"
+              style="height: 80px; width: 40%; cursor:pointer"
               tabindex="5"
               @keypress="goToLogin()"
               ><img
@@ -88,7 +89,7 @@
                 @keypress="logout()"
             /></a>  
 
-            <a class="" @click="goToCarrinho()" style="cursor:pointer; margin:8px">
+            <a class="" @click="goToCarrinho()" style="cursor:pointer; margin:8px; height: 80px;">
               <img
                 alt="carrinho"
                 class="img-navbar"
@@ -99,13 +100,13 @@
               /><span class="txt-navbar">Carrinho</span></a>
 
             <a class="" @click="goToBiblioteca()" 
-              style="height: 65px; width: 40%; cursor:pointer"
+              style="height: 80px; width: 40%; cursor:pointer"
               >
               <img
                 alt="icone com alguns livros"
                 class="img-navbar"
                 src="@/components/icons/Book_Shelf.png"
-                style="height: 70px; width: 40%;"
+                style="height: 55px; width: 40%;"
               /><span class="txt-navbar">Biblioteca</span>
             </a>
           </div>

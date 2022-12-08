@@ -2,7 +2,7 @@
     
     <div class="book-basics">
         <div class="image">
-            <img class="img-livro" v-bind:src="'/src/assets/' + filename" alt="capa do livro"/>
+            <img class="img-livro" alt="capa do livro" v-bind:src="filename" />
         </div>
         
         <div class="home-book-info">

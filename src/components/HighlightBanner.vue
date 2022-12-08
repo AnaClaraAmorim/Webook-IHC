@@ -81,7 +81,7 @@ export default {
     background: #fcfcfc;
     padding:5px;
     border-radius: 70%;
-    Height: 15vh;
+    height: 15vh;
 }
 
 .circle-icon:hover{
