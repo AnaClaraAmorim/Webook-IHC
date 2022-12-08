@@ -41,9 +41,7 @@ import BookInfo from "@/components/BookInfo.vue";
     </div>
      </div>
   <Footer></Footer>
-  <!--
-  TODO: Pagination
--->
+  
 </template>
 
 <script>
@@ -127,13 +125,56 @@ export default {
   flex-wrap: wrap;
   max-width: 80%;
   margin-top: 20px;
-  margin-left: 10%; 
-  margin-right: 10%;
+  margin-left: 8%; 
+  margin-right: 8%;
   margin-bottom: 80px;
 }
 
 .book{
   color: black;
+  display: flex;
+    justify-content: row;
+    flex-direction: column;
+    width: 19vw;
+    height: 50vh;
+    margin: 6px;
 }
+
+@media screen and (max-width: 1200px) {
+
+.book{
+  color: black;
+  display: flex;
+    justify-content: row;
+    flex-direction: column;
+    width: 18vw;
+    height: 50vh;
+    margin: 6px;
+}
+
+
+
+}
+
+@media screen and (max-width: 600px) {
+
+.book{
+  color: black;
+  display: flex;
+    justify-content: row;
+    flex-direction: column;
+    width: 60vw;
+    height: 50vh;
+    margin: 6px;
+}
+
+
+.page-title{
+
+  margin-top: 18px;
+}
+}
+
+
 
 </style>

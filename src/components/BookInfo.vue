@@ -27,16 +27,26 @@ export default {
 <style scoped>
 .image{
     width: 100%;
+    display: flex;
 }
 .book-basics{
     width: 100%;
     font-family: 'Grape Nuts', cursive;
     font-family: 'Open Sans', sans-serif;
+    cursor: pointer;
+   
 }
+
+.book-basics:hover{
+    background-color:  rgb(219, 219, 219);
+
+}
+
 .img-livro{
     width: 252px;
     float: left;
-    padding: 10px;
+    height: 40vh;
+    margin-bottom: 5px;
 }
 
 .title{
