@@ -53,7 +53,7 @@ import MenuMobile from "@/components/MenuMobile.vue";
                         </div>
 
                         <div class="Botao">
-                            <button type="button" class="btn btn-warning BotaoCarrinho " @click="goToSucess()" tabindex="15"> 
+                            <button type="button" class="btn btn-warning BotaoCarrinho " @click="goToCarrinho()" tabindex="15"> 
                             Adicionar ao carrinho
                                 </button>
                         </div>
@@ -195,6 +195,10 @@ export default{
         } else {
         return false
         }
+        },
+        goToCarrinho(){
+      this.$router.push("/carrinho");
+
         }
     }
 }
