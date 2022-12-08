@@ -62,9 +62,9 @@
 
 .circle-icon {
     background: #fcfcfc;
-    padding:30px;
-    border-radius: 50%;
-     height: 15vh;
+    padding:5px;
+    border-radius: 70%;
+    Height: 15vh;
 }
 
 .circle-icon:hover{
