@@ -187,8 +187,14 @@ export default {
     goToCarrinho() {
       this.$router.push("/carrinho");
     },
-    goToBiblioteca() {
-      this.$router.push("/biblioteca");
+    goToBiblioteca() {  
+            if(localStorage.getItem("logado") == null){
+                this.$router.push("/login")
+            }else if(localStorage.getItem("logado") == "false" ){   
+                this.$router.push("/login")
+            }else{
+               this.$router.push("/biblioteca");
+            }
     },
     getAllCategories() {
       return JSON.parse(localStorage.getItem("categories"));

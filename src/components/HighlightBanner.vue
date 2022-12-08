@@ -4,7 +4,7 @@
             <img alt="icone indicando comemoração" src="../components/icons/party.png"  class="circle-icon" tabindex="13">
             <p>Lançamentos</p>
         </div>
-        <div class="banner-img-txt">
+        <div class="banner-img-txt" @click="goToBiblioteca()">
             <img  alt="icone com alguns livros" src="../components/icons/livro.png"  class="circle-icon" tabindex="14">
             <p>Minha Biblioteca</p>
         </div>
@@ -25,7 +25,24 @@
         
     </div>
 </template>
+<script>
 
+export default {
+    name: "HighlightBanner",
+     methods: {
+        goToBiblioteca() {  
+            if(localStorage.getItem("logado") == null){
+                this.$router.push("/login")
+            }else if(localStorage.getItem("logado") == "false" ){   
+                this.$router.push("/login")
+            }else{
+               this.$router.push("/biblioteca");
+            }
+    },
+     }
+}
+
+</script>
 
 <style scoped>
 
