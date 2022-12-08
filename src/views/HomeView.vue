@@ -1,10 +1,13 @@
 <script setup>
 import Footer from "@/components/Footer.vue";
 import Menu from "@/components/Menu.vue";
+import MenuMobile from "@/components/MenuMobile.vue";
 import Carrousel from "@/components/Carrousel.vue";
 import HighlightBanner from "@/components/HighlightBanner.vue";
 import BuyByPrice from "@/components/BuyByPrice.vue";
 import Books from "@/components/Books.vue";
+import Books2 from "@/components/Books2.vue";
+
 </script>
 
 
@@ -17,29 +20,38 @@ e navegar para realizar as ações possíveis do usuário seja ele admin ou user
     <!-- Verifica se usuário é admin e de acordo com os privilegios de acesso mostra menu de admin
   ou de usuário padrão-->
    
+  <div v-if="!isMobile()" class="marginMenu">
     <Menu
       :plotDropDown="true"
       :filter="filterDropdown"
-      :actualCategory="this.$route.query.category"
+      :actualCategory="$route.query.category"
     />
+  </div>
 
-    <Carrousel style="margin:150px 50px 30px 50px"></Carrousel>
-    <HighlightBanner style="margin:0px 50px 30px 50px"></HighlightBanner>
+  <div v-else>
+    <MenuMobile
+    :plotDropDown="true"></MenuMobile>
+  </div>
+
+    <div  class="margin">
+    <Carrousel></Carrousel>
+   </div>
+    <HighlightBanner class="marginBanner" ></HighlightBanner>
     <div class="section" >
       <div class="title">
         Destaques
       </div>
       <Books style="margin:0px 50px 10px 50px"></Books>
     </div>
-    <div class="title buyByPrice-title">
+    <div class="title2 buyByPrice-title">
         Compre por preço
     </div>
-    <BuyByPrice style="margin:0px 50px 100px 50px"></BuyByPrice>
+    <BuyByPrice ></BuyByPrice>
     <div class="section" >
       <div class="title">
         Lançamentos
       </div>
-      <Books style="margin:0px 50px 10px 50px"></Books>
+      <Books2 style="margin:0px 50px 10px 50px"></Books2>
     </div>
     <!-- Chama o component do footer -->
     <Footer />
@@ -192,6 +204,13 @@ export default {
       if (account === null) return false;
       return account.adm === true;
     },
+    isMobile() {
+      if(window.screen.availWidth < 700){
+        return true
+      } else {
+        return false
+      }
+    }
   },
   data() {
     return {
@@ -224,14 +243,49 @@ export default {
   font-weight: bold;
   margin-bottom: 20px;
   margin-left:50px;
+  color:rgb(0,1,1);
+}
+
+.title2 {
+  font-size: xx-large;
+  font-weight: bold;
+  margin-bottom: 20px;
+  margin-left:50px;
+  color:black;
 }
 
 .section{
-  background-color:#E8E8E8;
+  background-color:rgb(232, 232, 232);
   padding: 20px 0;
 }
 
  .buyByPrice-title{
     margin-bottom:80px;
   }
+
+  .margin{
+    margin: 1px 50px 30px 50px;
+  }
+
+  .marginMenu{
+    margin-bottom: 150px;
+  }
+  .marginBanner{
+    margin: 1px 50px 30px 50px;
+  }
+
+   @media (max-width: 600px)
+    {
+      .buyByPrice-title{
+        margin-bottom:30px;
+      }
+
+      .margin{
+        margin:10px 10px 30px 10px;
+      }
+
+      .marginBanner{
+        margin:0px 10px 30px 10px;
+      }
+    }
 </style>
