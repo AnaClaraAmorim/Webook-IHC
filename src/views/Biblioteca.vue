@@ -1,15 +1,25 @@
 <script setup>
 import Footer from "@/components/Footer.vue";
 import Menu from "@/components/Menu.vue";
-import HighlightBanner from "@/components/HighlightBanner.vue";
-import BuyByPrice from "@/components/BuyByPrice.vue";
+import MenuMobile from "@/components/MenuMobile.vue";
 import BookInfo from "@/components/BookInfo.vue";
 </script>
 
 
 
 <template>
-  <Menu></Menu>
+  <div v-if="!isMobile()" class="marginMenu">
+    <Menu
+      :plotDropDown="true"
+      :filter="filterDropdown"
+      :actualCategory="$route.query.category"
+    />
+  </div>
+
+  <div v-else>
+    <MenuMobile
+    :plotDropDown="true"></MenuMobile>
+  </div>
 
   <div class="page-title">
    <p> Seus Ebooks </p>
@@ -39,6 +49,15 @@ import BookInfo from "@/components/BookInfo.vue";
 <script>
 export default {
   name: 'app',
+  methods:{
+    isMobile() {
+      if(window.screen.availWidth < 700){
+        return true
+        } else {
+        return false
+        }
+        }
+    },
   data () {
     return {
       book_details:[
@@ -81,6 +100,8 @@ export default {
 };
 </script>
 
+
+
 <style scoped>
 
 .page-title{
@@ -102,8 +123,8 @@ export default {
 }
 
 .book-grid{
-  display: grid;
-  grid-template-columns: repeat(5,1fr);
+  display: flex;
+  flex-wrap: wrap;
   max-width: 80%;
   margin-top: 20px;
   margin-left: 10%; 
