@@ -70,7 +70,15 @@ export default{
         }
         },
         goToFinalizar(){
-            this.$router.push("/finalizar")
+            
+            if(localStorage.getItem("logado") == null){
+                this.$router.push("/login")
+            }else if(localStorage.getItem("logado") == "false" ){   
+                this.$router.push("/login")
+            }else{
+                this.$router.push("/finalizar")
+            }
+        
         }
     }
 }

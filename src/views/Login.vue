@@ -69,8 +69,7 @@ export default{
     },
     Login(){
         localStorage.setItem("logado","true");
-        this.$router.push("/");
-
+        this.$router.go(-1);
     }
 }
 }
