@@ -25,6 +25,7 @@ import MenuMobile from "@/components/MenuMobile.vue";
         <h1 > Meus itens </h1>
         <div class="content" >
             <div class="Cart-Container">
+                <p class="Msg"></p>
                 <div class="Cart-Items">
                     <div class="image-box">
                         <img src="../assets/0.jpg" class="ImagemLivro" alt="capa do livro"/>
@@ -35,20 +36,20 @@ import MenuMobile from "@/components/MenuMobile.vue";
                     <div class="counter"></div>
                     <div class="prices"></div>
                     <div class="counter">
-                        <div class="btn-counter" tabindex="18">-</div>
-                        <div class="count">2</div>
-                        <div class="btn-counter" tabindex="19">+</div>
+                        <div class="btn-counter" tabindex="18" @click="DiminuirQTD()">-</div>
+                        <div class="count">1</div>
+                        <div class="btn-counter" tabindex="19" @click="AumentarQTD()">+</div>
                     </div>
                     <div class="prices">
-                        <h3 style="color:black">R$39,99</h3>
-                        <div class="remove" tabindex="20"><u>Remover</u></div>
+                        <h3 style="color:black">R$39.99</h3>
+                        <div class="remove" tabindex="20" @click="RemoverItem()"><u>Remover</u></div>
                     </div>
                 </div>
             </div>
             <div class="total" >
                 <div class="Preco-Container">
                     <h1 style="color:black"> Total</h1>
-                    <h1 style="color:black"> R$79,98</h1>
+                    <h1 style="color:black"> R$<span class="PrecoTotal">39.99</span></h1>
                 </div>
                 <button type="submit" @click="goToFinalizar()" class="btn btn-finalizar-pedido" style="width:100%; margin-top:10px; color:rgb(0,2,2)" tabindex="20" @keypress="goToFinalizar()">Finalizar pedido</button>
             </div>
@@ -79,6 +80,35 @@ export default{
                 this.$router.push("/finalizar")
             }
         
+        },
+        AumentarQTD(){
+            var atual = document.getElementsByClassName("count")[0].innerHTML
+            atual = parseInt(atual) + 1
+            document.getElementsByClassName("count")[0].innerHTML = atual
+            
+            var preco = document.getElementsByClassName("PrecoTotal")[0].innerHTML
+            preco = (parseFloat(preco) /(atual-1)) * atual
+            document.getElementsByClassName("PrecoTotal")[0].innerHTML = preco
+        },
+        DiminuirQTD(){
+            var atual = document.getElementsByClassName("count")[0].innerHTML
+            atual = parseInt(atual) - 1
+            
+            if(atual == 0){
+                document.getElementsByClassName("Cart-Items")[0].remove()
+                document.getElementsByClassName("Msg")[0].innerHTML = "Seu Carrinho Esta Vazio"
+                document.getElementsByClassName("PrecoTotal")[0].innerHTML = "0.00"
+            }else{
+            document.getElementsByClassName("count")[0].innerHTML = atual
+            var preco = document.getElementsByClassName("PrecoTotal")[0].innerHTML
+            preco = (parseFloat(preco) /(atual+1)) * atual
+            document.getElementsByClassName("PrecoTotal")[0].innerHTML = preco 
+            }
+        },
+        RemoverItem(){
+            document.getElementsByClassName("Cart-Items")[0].remove() 
+            document.getElementsByClassName("Msg")[0].innerHTML = "Seu Carrinho Esta Vazio"
+            document.getElementsByClassName("PrecoTotal")[0].innerHTML = "0.00"
         }
     }
 }

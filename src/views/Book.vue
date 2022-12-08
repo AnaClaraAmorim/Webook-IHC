@@ -54,6 +54,7 @@ import MenuMobile from "@/components/MenuMobile.vue";
 
                         <div class="Botao">
                             <button type="button" class="btn btn-warning BotaoCarrinho " @click="goToCarrinho()" tabindex="15"> 
+                            <button type="button" class="btn btn-warning BotaoCarrinho " @click="goToCarrinho()" tabindex="15"> 
                             Adicionar ao carrinho
                                 </button>
                         </div>

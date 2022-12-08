@@ -15,7 +15,7 @@
             <div class="card-body">
               <h5 class="card-title nome-livro">Eragon</h5>
               <p class="card-text autor-livro">Christopher Paolini</p>
-              <p class="card-text preco-livro">R$ 36,97</p>
+              <p class="card-text preco-livro">R$ 36.97</p>
               
             </div>
           </a> 
@@ -29,7 +29,7 @@
             <div class="card-body">
               <h5 class="card-title nome-livro">Crepúsculo</h5>
               <p class="card-text autor-livro">Stephenie Meyer</p>
-              <p class="card-text preco-livro">R$ 52,40</p>
+              <p class="card-text preco-livro">R$ 52.40</p>
             </div>
           </a>  
         </div>
@@ -42,7 +42,7 @@
             <div class="card-body">
               <h5 class="card-title nome-livro">Harry Potter</h5>
               <p class="card-text autor-livro">J.K. ROWLING</p>
-              <p class="card-text preco-livro">R$ 39,90</p>
+              <p class="card-text preco-livro">R$ 39.90</p>
               
             </div>
           </a>  
@@ -56,7 +56,7 @@
             <div class="card-body">
               <h5 class="card-title nome-livro">Frankenstein</h5>
               <p class="card-text autor-livro">Mary Shelley</p>
-              <p class="card-text preco-livro">R$ 39,90</p>
+              <p class="card-text preco-livro">R$ 39.90</p>
             </div>
           </a> 
         </div>
