@@ -11,7 +11,7 @@ import MenuMobile from "@/components/MenuMobile.vue";
     <Menu
       :plotDropDown="true"
       :filter="filterDropdown"
-      :actualCategory="this.$route.query.category"
+      :actualCategory="$route.query.category"
     />
   </div>
 

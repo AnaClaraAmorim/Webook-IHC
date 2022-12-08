@@ -88,23 +88,23 @@
                 @keypress="logout()"
             /></a>  
 
-            <a class="" @click="goToBiblioteca()" style="cursor:pointer; margin:8px">
+            <a class="" @click="goToCarrinho()" style="cursor:pointer; margin:8px">
               <img
                 alt="carrinho"
                 class="img-navbar"
                 src="@/components/icons/Carrinho.png"
                 style="height: 50px; width: 50%; "
                 tabindex="6"
-                @keypress="goToBiblioteca()"
+                @keypress="goToCarrinho()"
               /><span class="txt-navbar">Carrinho</span></a>
 
-            <a class="" @click="goToCarrinho()" 
-              style="height: 65px; width: 40%; cursor:pointer" tabindex="7" @keypress="goToCarrinho()"
+            <a class="" @click="goToBiblioteca()" 
+              style="height: 65px; width: 40%; cursor:pointer"
               >
               <img
                 alt="icone com alguns livros"
                 class="img-navbar"
-                src="@/components/icons/Book Shelf.png"
+                src="@/components/icons/Book_Shelf.png"
                 style="height: 70px; width: 40%;"
               /><span class="txt-navbar">Biblioteca</span>
             </a>
