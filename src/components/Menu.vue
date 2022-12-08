@@ -78,12 +78,12 @@
                 style="height:45px"
             /><span class="txt-navbar">Entrar</span></a>
             
-            <a v-else class="" @click="logout()" style="height: 120px !important"
+           <a v-else class="" @click="logout()" style="height: 62px; width: 40%; cursor:pointer"
               ><img
                 alt="icone indicando saída"
                 class="img-navbar"
                 src="@/components/icons/logout.png"
-                style="height: 50px; width: 40%; cursor: pointer;"
+                style="height:45px"
                 tabindex="5"
                 @keypress="logout()"
             /></a>  
@@ -152,11 +152,16 @@ export default {
       this.$router.push({ path: "/livro", query: { id: idLivro } });
     },
     logout() {
-      VueCookieNext.removeCookie("account");
-      this.$router.go(0);
+       localStorage.setItem("logado","false");
+        this.$router.go(0);
     },
     hadUser() {
-      return VueCookieNext.getCookie("account") !== null;
+      if(localStorage.getItem("logado") == null){
+        return false;
+      }else if(localStorage.getItem("logado") == "false" ){
+        return false;
+      }
+      return true;
     },
     getAllBooks() {
       return JSON.parse(localStorage.getItem("books"));

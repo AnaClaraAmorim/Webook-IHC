@@ -30,15 +30,16 @@ import MenuMobile from "@/components/MenuMobile.vue";
             <span style="font-size:50px; font-weight: bold; display: flex; justify-content: center; width: 150%;">  Login</span>
 
             <span style="display:flex ; align-items:left">Email</span>
-            <input type="email" placeholder="exemplo@email.com" class="InputLogin" tabindex="13"/>
+
+            <input type="email" class="form-control InputLogin" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="exemplo@email.com" tabindex="13">
             Senha
-            <input type="text" placeholder="Senha" class="InputLogin" tabindex="14"/>
+            <input type="password" class="form-control InputLogin" id="exampleInputPassword1" placeholder="Password" tabindex="14">
             <a class="txt-link" style=" cursor: pointer" tabindex="15">Esqueceu sua senha?</a>
 
             
             <!-- COMEÇO DO BOOTSTRAP-->
             <div style="display:flex; width:150%">
-                <button type="submit" class="btn btn-primary btn-lg btn-block" style="width:450%; margin-bottom:40px; margin-top:10px" tabindex="16">Login</button>
+                <button type="submit" class="btn btn-primary btn-lg btn-block" style="width:450%; margin-bottom:40px; margin-top:10px" tabindex="16" @click="Login()">Login</button>
                  <span style="margin-left:15px">ou</span> <a class="txt-link" style="width:400%; margin-left: 15px; cursor:pointer" tabindex="17"> Criar conta</a>
             </div>
           <a class="btn btn-primary btn-lg btn-block" style="background-color: #3b5998; width: 150%; margin-bottom: 10px;" href="#!"
@@ -57,12 +58,19 @@ import MenuMobile from "@/components/MenuMobile.vue";
 
 <script>
 export default{
-    methods:{isMobile() {
+    methods:{
+        
+    isMobile() {
       if(window.screen.availWidth < 700){
         return true
       } else {
         return false
       }
+    },
+    Login(){
+        localStorage.setItem("logado","true");
+        this.$router.push("/");
+
     }
 }
 }
@@ -70,9 +78,11 @@ export default{
 </script>
 
 <style scoped>
-
+.txt-link{
+    color: black;
+}
 .BigImageLeft{
-    height: 680px;
+    height: 634px;
     width: 100%;
 }
 
@@ -99,9 +109,7 @@ export default{
     width: 150%;
     height: 38px;
     border-radius: 8px;
-    background-color: #dbd3d3;
-    border-color: white;
-    
+    margin: 10px 0;    
 }
 
 ::placeholder{
@@ -112,4 +120,11 @@ export default{
 .marginMenu{
     margin-bottom: 150px;
   }
+
+@media (max-width: 768px) {
+.CardLogin {
+   
+    padding-left: 10px;
+}
+}
 </style>
