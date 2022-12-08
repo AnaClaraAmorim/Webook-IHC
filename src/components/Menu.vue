@@ -9,7 +9,7 @@
             <img
               alt="logo do site, mostrando um livro"
               class="img-navbar"
-              style="width:120%"
+              height="auto"
               src="@/components/icons/icon.png"  
             />
           </a>
