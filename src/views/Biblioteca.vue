@@ -48,19 +48,19 @@ export default {
           author: "JK Rowling"
                 },
                 {
-          name: "Harry Potter e a pedra filosofal",     
-          img: "../assets/0.jpg",
-          author: "JK Rowling"
+          name: "Eragon",     
+          img: "../assets/1.jpg",
+          author: "Christopher Paolini"
                 },
                 {
-          name: "Harry Potter e a pedra filosofal",     
-          img: "../assets/0.jpg",
-          author: "JK Rowling"
+          name: "Crepúsculo",     
+          img: "../assets/2.jpg",
+          author: "Stephanie Meyer"
                 },
                 {
-          name: "Harry Potter e a pedra filosofal",     
-          img: "../assets/0.jpg",
-          author: "JK Rowling"
+          name: "Frankeinstein",     
+          img: "../assets/3.jpg",
+          author: "Mary Shelley"
                 },
                 {
           name: "Harry Potter e a pedra filosofal",     
@@ -105,7 +105,7 @@ export default {
   display: grid;
   grid-template-columns: repeat(5,1fr);
   max-width: 80%;
-  margin-top: 80px;
+  margin-top: 20px;
   margin-left: 10%; 
   margin-right: 10%;
   margin-bottom: 80px;
